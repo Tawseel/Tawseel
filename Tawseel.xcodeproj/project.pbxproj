@@ -21,6 +21,8 @@
 		8B1E516B263FEA1D0015C353 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E516A263FEA1D0015C353 /* SignUpView.swift */; };
 		8B1E5172264006280015C353 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E5171264006280015C353 /* SettingsCell.swift */; };
 		8B1E517F264016EC0015C353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E517E264016EC0015C353 /* ContentView.swift */; };
+		8BB5F3742642CB0700D2F604 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5F3732642CB0700D2F604 /* Cart.swift */; };
+		8BB5F3762642CBD400D2F604 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5F3752642CBD400D2F604 /* CartView.swift */; };
 		8BE15FD02631F0CD001D1DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE15FCF2631F0CD001D1DA0 /* AppDelegate.swift */; };
 		8BE15FD22631F0CD001D1DA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE15FD12631F0CD001D1DA0 /* SceneDelegate.swift */; };
 		8BE15FD42631F0CD001D1DA0 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE15FD32631F0CD001D1DA0 /* SignInView.swift */; };
@@ -55,6 +57,8 @@
 		8B1E516A263FEA1D0015C353 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8B1E5171264006280015C353 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		8B1E517E264016EC0015C353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BB5F3732642CB0700D2F604 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		8BB5F3752642CBD400D2F604 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		8BE15FCC2631F0CD001D1DA0 /* Tawseel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tawseel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE15FCF2631F0CD001D1DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE15FD12631F0CD001D1DA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				8B1E516A263FEA1D0015C353 /* SignUpView.swift */,
 				8B1E5164263FE7580015C353 /* TwaseelView */,
 				8B1E5179264008810015C353 /* HomeView */,
+				8BB5F3772642CBE200D2F604 /* CardView */,
 				8B1E516F264006110015C353 /* SettingsView */,
 				8B1E5168263FE7D20015C353 /* StoreView */,
 				8B1E517E264016EC0015C353 /* ContentView.swift */,
@@ -159,6 +164,14 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
+		8BB5F3772642CBE200D2F604 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				8BB5F3752642CBD400D2F604 /* CartView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
 		8BE15FC32631F0CD001D1DA0 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +202,7 @@
 				8BE15FDD2631F0D1001D1DA0 /* Info.plist */,
 				8BE15FD72631F0D1001D1DA0 /* Preview Content */,
 				8B03AF40264149CD001AF518 /* AppManager.swift */,
+				8BB5F3732642CB0700D2F604 /* Cart.swift */,
 			);
 			path = Tawseel;
 			sourceTree = "<group>";
@@ -302,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B03AF49264165F9001AF518 /* LogInCredentials.swift in Sources */,
+				8BB5F3762642CBD400D2F604 /* CartView.swift in Sources */,
 				8B03AF3E26405B6D001AF518 /* ItemCategoryRow.swift in Sources */,
 				8B03AF34264057E2001AF518 /* ItemModelData.swift in Sources */,
 				8B03AF2D26404E17001AF518 /* itemCard.swift in Sources */,
@@ -318,6 +333,7 @@
 				8B03AF4626416551001AF518 /* LoginModel.swift in Sources */,
 				8BE15FD22631F0CD001D1DA0 /* SceneDelegate.swift in Sources */,
 				8BF20B3C26320A43007AC659 /* CategoryRow.swift in Sources */,
+				8BB5F3742642CB0700D2F604 /* Cart.swift in Sources */,
 				8B03AF4C2641667C001AF518 /* ImageLoader.swift in Sources */,
 				8BE15FD42631F0CD001D1DA0 /* SignInView.swift in Sources */,
 				8BF20B4826320F75007AC659 /* MapView.swift in Sources */,

@@ -2,15 +2,16 @@
 //  ContentView.swift
 //  Tawseel
 //
-//  Created by Obaida Kata on 22/04/2021.
+//  Created by Obaida Kata on 03/05/2021.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            SignInView()
+        }
     }
 }
 

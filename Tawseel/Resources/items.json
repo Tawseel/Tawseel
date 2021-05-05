@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "item1",
+    "description": "dgbdbgbgbdbg",
+    "price": 50.90,
+    "category": "Burgers1",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 2,
+    "name": "item2",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers1",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 3,
+    "name": "item3",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers2",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 4,
+    "name": "item4",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers2",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 5,
+    "name": "item4",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers3",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 5,
+    "name": "item4",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers3",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 6,
+    "name": "item1",
+    "description": "dgbdbgbgbdbg",
+    "price": 50.90,
+    "category": "Burgers1",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 7,
+    "name": "item2",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers1",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 8,
+    "name": "item3",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers2",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 9,
+    "name": "item4",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers2",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 10,
+    "name": "item4",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers3",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  },
+  {
+    "id": 11,
+    "name": "item4",
+    "description": "dgbdbdbg",
+    "price": 50.90,
+    "category": "Burgers3",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto"
+  }
+]

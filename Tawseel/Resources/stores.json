@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1001,
+    "name": "obaidaStore1",
+    "phoneNumber": "0123456789",
+    "email": "obaida2@gmail.com",
+    "password": "obaida1234",
+    "category": "Burgers",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto",
+    "isFeatured": true,
+    "description": "cdcdcdcd",
+    "coordinates": {
+        "longitude": -116.166868,
+        "latitude": 34.011286
+    }
+  },
+  {
+    "id": 1002,
+    "name": "obaidaStore2",
+    "phoneNumber": "0123456789",
+    "email": "obaida2@gmail.com",
+    "password": "obaida1234",
+    "category": "Amirican",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto",
+    "isFeatured": false,
+    "description": "cdcdcdcd",
+    "coordinates": {
+        "longitude": -116.166868,
+        "latitude": 34.011286
+    }
+  },
+  {
+    "id": 1003,
+    "name": "obaidaStore3",
+    "phoneNumber": "0123456789",
+    "email": "obaida2@gmail.com",
+    "password": "obaida1234",
+    "category": "Indian",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto",
+    "isFeatured": false,
+    "description": "cdcdcdcd",
+    "coordinates": {
+        "longitude": -116.166868,
+        "latitude": 34.011286
+    }
+  },
+  {
+    "id": 1004,
+    "name": "obaidaStore4",
+    "phoneNumber": "0123456789",
+    "email": "obaida2@gmail.com",
+    "password": "obaida1234",
+    "category": "Burgers",
+    "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto",
+    "isFeatured": false,
+    "description": "cdcdcdcd",
+    "coordinates": {
+        "longitude": -116.166868,
+        "latitude": 34.011286
+    }
+  },
+  {
+    "id": 1005,
+    "name": "obaidaStore5",
+    "phoneNumber": "0123456789",
+    "email": "obaida2@gmail.com",
+    "password": "obaida1234",
+    "category": "Burgers",
+    "imagePath": "https://www.simplyrecipes.com/thmb/4-fpPGQ5mMHj9GNHicfir6jbVaM=/1600x1600/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__06__HT-Grill-Burger-LEAD-VERTICAL-d0ae8c04f90c4cc2b03cd0b154e439eb.jpg",
+    "isFeatured": false,
+    "description": "cdcdcdcd",
+    "coordinates": {
+        "longitude": -116.166868,
+        "latitude": 34.011286
+    }
+  },
+  {
+      "id": 1006,
+      "name": "obaidaStore6",
+      "phoneNumber": "0123456789",
+      "email": "obaida2@gmail.com",
+      "password": "obaida1234",
+      "category": "Burgers",
+      "imagePath": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/966b425bb57f4962b8fe297ae5b846d2/bfv8220_Steak_With_Garlic_Butter-FB1080.jpg?output-format=auto&output-quality=auto",
+      "isFeatured": false,
+      "description": "cdcdcdcd",
+      "coordinates": {
+          "longitude": -116.166868,
+          "latitude": 34.011286
+      }
+    }
+  
+]
