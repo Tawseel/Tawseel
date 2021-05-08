@@ -10,14 +10,6 @@ import SwiftUI
 struct CartView: View {
     @ObservedObject var cart: Cart = AppManager.Instance.cart
     
-    init() {
-        let itemModel = ItemModelData()
-        itemModel.items.forEach { item in
-            AppManager.Instance.cart.add(item: item)
-        }
-    }
-    
-    
     var body: some View {
         if(cart.items.count > 0) {
             List {
@@ -27,6 +19,9 @@ struct CartView: View {
                     cart.delete(indexSet: indexSet)
                 })
             }
+        }
+        else{
+            Text("Cart Empty!")
         }
     }
 }
