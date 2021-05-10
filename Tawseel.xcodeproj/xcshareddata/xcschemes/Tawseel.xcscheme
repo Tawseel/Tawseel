@@ -52,6 +52,11 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
+            key = "storeApi"
+            value = "https://tawseel.odaiq.co:5200/store"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "loginApi"
             value = "https://tawseel.odaiq.co:5100/login"
             isEnabled = "YES">

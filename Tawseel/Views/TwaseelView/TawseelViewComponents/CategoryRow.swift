@@ -35,6 +35,6 @@ struct CategoryRow_Previews: PreviewProvider {
     static var stores = AppManager.Instance.modelData.stores
     
     static var previews: some View {
-        CategoryRow(categoryName: stores[0].category.rawValue, storesDetails: Array(stores.prefix(3)))
+        CategoryRow(categoryName: stores[0].category, storesDetails: Array(stores.prefix(3)))
     }
 }

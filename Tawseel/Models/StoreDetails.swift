@@ -14,29 +14,21 @@ struct StoreDetails: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var phoneNumber: String
-    var email: String
-    var password: String
-    var isFeatured: Bool
+//    var isFeatured: Bool
     var description: String
     var imagePath: String
     
+    var category: String
     
-    var category: Category
-    enum Category: String, CaseIterable, Codable {
-        case burgers = "Burgers"
-        case amirican = "Amirican"
-        case indian = "Indian"
-    }
-    
-    private var coordinates: Coordinates
-    var locationCoordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(
-            latitude: coordinates.latitude,
-            longitude: coordinates.longitude)
-    }
-
-    struct Coordinates: Hashable, Codable {
-        var latitude: Double
-        var longitude: Double
-    }
+//    private var storeCoordinates: Coordinates
+//    var locationCoordinate: CLLocationCoordinate2D {
+//        CLLocationCoordinate2D(
+//            latitude: storeCoordinates.latitude,
+//            longitude: storeCoordinates.longitude)
+//    }
+//
+//    struct Coordinates: Hashable, Codable {
+//        var latitude: Double
+//        var longitude: Double
+//    }
 }

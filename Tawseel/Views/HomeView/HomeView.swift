@@ -18,12 +18,13 @@ struct HomeView: View {
     var body: some View {
         VStack {
             List {
-                imageLoader.loadImage(imageUrl: modelData.features[0].imagePath)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
-                    .listRowInsets(EdgeInsets())
+//                imageLoader.loadImage(imageUrl: modelData.features[0].imagePath)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(height: 200)
+//                    .clipped()
+//                    .listRowInsets(EdgeInsets())
+                Text("\(modelData.stores.capacity)")
                 
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, storesDetails: modelData.categories[key]!)
@@ -32,10 +33,14 @@ struct HomeView: View {
             }
             .navigationTitle("Tawseel")
         }
+        .onAppear(perform: {
+            modelData.loadStores()
+        })
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
     static var previews: some View {
         HomeView()
     }

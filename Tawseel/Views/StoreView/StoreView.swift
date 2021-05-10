@@ -23,9 +23,9 @@ struct StoreView: View {
     
     var body: some View {
         ScrollView {
-            MapView(coordinate: storeDetails.locationCoordinate)
-                .ignoresSafeArea(edges: .top)
-                .frame(height: 260)
+//            MapView(coordinate: storeDetails.locationCoordinate)
+//                .ignoresSafeArea(edges: .top)
+//                .frame(height: 260)
             
             CircleImage(image: imageLoader.loadImage(imageUrl: storeDetails.imagePath))
                 .offset(y: -150)

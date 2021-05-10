@@ -7,8 +7,9 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
-class AppManager
+final class AppManager : ObservableObject
 {
     private static var instance: AppManager?
     
@@ -47,4 +48,22 @@ class AppManager
     }
     
     @Published public var cart = Cart()
+    
+    private var loginModel1: LoginModel?
+    
+    public var loginModel: LoginModel {
+        get {
+            if(loginModel1 == nil){
+                loginModel1 = LoginModel()
+            }
+            
+            return loginModel1!
+        }
+    }
+    var didChange2 = PassthroughSubject<String, Never>()
+    @Published var token = ""{
+        didSet {
+            didChange2.send(token)
+        }
+    }
 }

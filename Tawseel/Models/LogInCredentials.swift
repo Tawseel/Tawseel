@@ -8,6 +8,11 @@
 import Foundation
 
 struct LogInCredentials: Encodable {
-    let password:String;
     let email:String;
+    let password:String;
+    
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+    }
 }
