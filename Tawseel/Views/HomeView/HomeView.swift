@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
-    private var modelData = AppManager.Instance.modelData
+    @ObservedObject private var modelData = AppManager.Instance.modelData
     @ObservedObject private var  imageLoader: ImageLoader
     
     init(){
         imageLoader = ImageLoader()
+        modelData.loadStores()
     }
     
     var body: some View {
@@ -24,7 +25,6 @@ struct HomeView: View {
 //                    .frame(height: 200)
 //                    .clipped()
 //                    .listRowInsets(EdgeInsets())
-                Text("\(modelData.stores.capacity)")
                 
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, storesDetails: modelData.categories[key]!)
@@ -33,9 +33,9 @@ struct HomeView: View {
             }
             .navigationTitle("Tawseel")
         }
-        .onAppear(perform: {
-            modelData.loadStores()
-        })
+//        .onAppear(perform: {
+//
+//        })
     }
 }
 

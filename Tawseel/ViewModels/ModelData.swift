@@ -36,12 +36,16 @@ final class ModelData: ObservableObject {
     var headers: HTTPHeaders = []
     
     func loadStores() {
-        print("loadStores")
         if var urlString = storeApi{
             urlString = urlString + "/getAllStores";
             headers.add(name: "Authorization", value: token)
             AF.request(urlString, headers: headers).response {
                 response in
+//                if let data = response.data {
+//                    let json = String(data: data, encoding: String.Encoding.utf8)
+//                    print(json)
+//                }
+                
                 if let error = response.error {
                     self.error = error
                     print(error)
@@ -51,6 +55,7 @@ final class ModelData: ObservableObject {
                         //Decode dataResponse received from a network request
                         let decoder = JSONDecoder()
                         self.stores = try decoder.decode([StoreDetails].self, from: data)
+                        //print(self.stores)
                     } catch let parsingError {
                         print("Error", parsingError)
                     }

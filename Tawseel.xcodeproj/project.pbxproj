@@ -54,6 +54,7 @@
 		8B03AF4526416551001AF518 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		8B03AF48264165F9001AF518 /* LogInCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCredentials.swift; sourceTree = "<group>"; };
 		8B03AF4B2641667C001AF518 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		8B1A2DD6264A76C900B9FBAB /* Tawseel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tawseel.entitlements; sourceTree = "<group>"; };
 		8B1E5157263FE2670015C353 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8B1E515B263FE2E10015C353 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8B1E516A263FEA1D0015C353 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -227,6 +228,7 @@
 		8BE15FCE2631F0CD001D1DA0 /* Tawseel */ = {
 			isa = PBXGroup;
 			children = (
+				8B1A2DD6264A76C900B9FBAB /* Tawseel.entitlements */,
 				8BE15FCF2631F0CD001D1DA0 /* AppDelegate.swift */,
 				8B03AF40264149CD001AF518 /* AppManager.swift */,
 				8BE15FD12631F0CD001D1DA0 /* SceneDelegate.swift */,
@@ -524,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Tawseel/Tawseel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Tawseel/Preview Content\"";
 				DEVELOPMENT_TEAM = T8E38EMWG6;
@@ -535,6 +538,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tawseel.Tawseel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -545,6 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Tawseel/Tawseel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Tawseel/Preview Content\"";
 				DEVELOPMENT_TEAM = T8E38EMWG6;
@@ -556,6 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tawseel.Tawseel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

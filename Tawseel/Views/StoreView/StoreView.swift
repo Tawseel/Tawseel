@@ -57,9 +57,6 @@ struct StoreView: View {
         }
         .navigationTitle(storeDetails.name)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            
-        }
         
         
     }

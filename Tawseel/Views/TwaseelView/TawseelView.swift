@@ -25,9 +25,8 @@ struct TawseelView: View {
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
-                }     
+                }
         }
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("Tawssel", displayMode: .inline)
     }
     
