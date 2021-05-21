@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				8BB5F3732642CB0700D2F604 /* Cart.swift */,
-				8B03AF33264057E2001AF518 /* ItemModelData.swift */,
 				8B03AF4526416551001AF518 /* LoginModel.swift */,
+				8B03AF33264057E2001AF518 /* ItemModelData.swift */,
 				8BE15FF12631F401001D1DA0 /* ModelData.swift */,
 			);
 			path = ViewModels;

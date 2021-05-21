@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct StoreView: View {
-    var itemModelData = ItemModelData()
+    var itemModelData : ItemModelData = AppManager.Instance.itemModelData
     var storeDetails: StoreDetails
     @ObservedObject var imageLoader: ImageLoader
     @State private var showingPopover = false
@@ -57,7 +57,10 @@ struct StoreView: View {
         }
         .navigationTitle(storeDetails.name)
         .navigationBarTitleDisplayMode(.inline)
-        
+        .onAppear()
+        {
+            self.itemModelData.loadItems(storeID: storeDetails.id)
+        }
         
     }
 }

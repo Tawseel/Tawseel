@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import CoreLocation
 
 
 struct Item: Hashable, Codable, Identifiable {
@@ -16,5 +15,7 @@ struct Item: Hashable, Codable, Identifiable {
     var description: String
     var price: Double
     var category: String
+    var storeID: Int
+    var components : [String]
     var imagePath: String
 }
