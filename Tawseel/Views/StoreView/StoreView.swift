@@ -28,8 +28,8 @@ struct StoreView: View {
 //                .frame(height: 260)
             
             CircleImage(image: imageLoader.loadImage(imageUrl: storeDetails.imagePath))
-                .offset(y: -150)
-                .padding(.bottom, -170)
+                .offset(y: 10)
+                .padding(.bottom, -5)
             
             VStack(alignment: .leading) {
                 HStack {
