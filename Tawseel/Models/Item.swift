@@ -8,14 +8,21 @@
 import Foundation
 import SwiftUI
 
+struct Ingredients: Decodable{
+    var id: Int
+    var itemID: Int
+    var value: String
+    var type: Int
+}
 
-struct Item: Hashable, Codable, Identifiable {
+
+struct Item: Decodable, Identifiable {
     var id: Int
     var name: String
     var description: String
     var price: Double
     var category: String
     var storeID: Int
-    var components : [String]
+    var ingredients: [Ingredients]
     var imagePath: String
 }
