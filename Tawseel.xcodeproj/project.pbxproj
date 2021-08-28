@@ -41,8 +41,8 @@
 		8BF20B4926320F75007AC659 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF20B4526320F75007AC659 /* CircleImage.swift */; };
 		8BF20B4A26320F75007AC659 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF20B4626320F75007AC659 /* StoreView.swift */; };
 		8BF20B4B26320F75007AC659 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF20B4726320F75007AC659 /* FavoriteButton.swift */; };
+		E0DDE61026D91E9A0072138F /* RadioButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE60F26D91E9A0072138F /* RadioButtonsView.swift */; };
 		E0F9566026D2385000137F50 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F9565F26D2385000137F50 /* IngredientsView.swift */; };
-		E0F9566526D238E700137F50 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F9566426D238E700137F50 /* CheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +83,8 @@
 		8BF20B4526320F75007AC659 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		8BF20B4626320F75007AC659 /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		8BF20B4726320F75007AC659 /* FavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		E0DDE60F26D91E9A0072138F /* RadioButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonsView.swift; sourceTree = "<group>"; };
 		E0F9565F26D2385000137F50 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
-		E0F9566426D238E700137F50 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,18 +290,10 @@
 		E0F9565E26D2383500137F50 /* IngredientsView */ = {
 			isa = PBXGroup;
 			children = (
-				E0F9566326D238D300137F50 /* UtilsForIngredientsView */,
 				E0F9565F26D2385000137F50 /* IngredientsView.swift */,
+				E0DDE60F26D91E9A0072138F /* RadioButtonsView.swift */,
 			);
 			path = IngredientsView;
-			sourceTree = "<group>";
-		};
-		E0F9566326D238D300137F50 /* UtilsForIngredientsView */ = {
-			isa = PBXGroup;
-			children = (
-				E0F9566426D238E700137F50 /* CheckBox.swift */,
-			);
-			path = UtilsForIngredientsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,7 +388,6 @@
 				8B1E5158263FE2670015C353 /* SettingsView.swift in Sources */,
 				8BF20B3F26320B41007AC659 /* CategoryItem.swift in Sources */,
 				8BF20B4B26320F75007AC659 /* FavoriteButton.swift in Sources */,
-				E0F9566526D238E700137F50 /* CheckBox.swift in Sources */,
 				E0F9566026D2385000137F50 /* IngredientsView.swift in Sources */,
 				8B1E517F264016EC0015C353 /* ContentView.swift in Sources */,
 				8BE15FFF2631FF1C001D1DA0 /* TawseelView.swift in Sources */,
@@ -409,6 +400,7 @@
 				8BF20B4826320F75007AC659 /* MapView.swift in Sources */,
 				8B03AF3026404EF9001AF518 /* Item.swift in Sources */,
 				8BE15FF22631F401001D1DA0 /* ModelData.swift in Sources */,
+				E0DDE61026D91E9A0072138F /* RadioButtonsView.swift in Sources */,
 				8BF20B4926320F75007AC659 /* CircleImage.swift in Sources */,
 				8B1E5172264006280015C353 /* SettingsCell.swift in Sources */,
 				8BF20B4A26320F75007AC659 /* StoreView.swift in Sources */,

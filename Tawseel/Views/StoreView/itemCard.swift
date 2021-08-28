@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct itemCard: View {
+    @State var selected = ""
+    @State var show = false
     var item: Item
     @ObservedObject var imageLoader: ImageLoader
     @ObservedObject var cart = AppManager.Instance.cart
@@ -19,28 +21,33 @@ struct itemCard: View {
 
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Button(action: {
-                    cart.add(item: item)
-            }, label: {
-                VStack{
-                imageLoader.loadImage(imageUrl: item.imagePath)
-                        .resizable()
-                        .frame(width: 155, height: 155)
-                    .cornerRadius(5)
-                    Text(item.name)
-                        .font(.caption)
-                }
-            })
             
-            
-        }
-        .padding(.leading, 15)
+            VStack {
+                Button(action: {
+                    RadioButtons(selected: self.$selected,show: self.$show)
+                
+                }, label: {
+                    VStack{
+                    imageLoader.loadImage(imageUrl: item.imagePath)
+                            .resizable()
+                            .frame(width: 155, height: 155)
+                        .cornerRadius(5)
+                        Text(item.name)
+                            .font(.caption)
+                    }
+                })
+            }
+        
+        
     }
 }
+
 
 struct itemCard_Previews: PreviewProvider {
     static var previews: some View {
         itemCard(item: AppManager.Instance.itemModelData.items[0])
     }
 }
+
+
+var data = ["Cheese", "Maio", "Ketshup"]
