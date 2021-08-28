@@ -20,7 +20,7 @@ struct Value: Decodable, Hashable{
     var ingredientID: Int
 }
 
-struct IngredientConfiguration: Decodable, Hashable{
+struct IngredientConfiguration: Decodable, Hashable,Identifiable{
     var id: Int
     var minimumValue: Int
     var maximumValue: Int
@@ -28,8 +28,9 @@ struct IngredientConfiguration: Decodable, Hashable{
     var ingredientID: Int
 }
 
-struct Ingredients: Decodable, Hashable{
+struct Ingredient: Decodable, Hashable, Identifiable{
     var id: Int
+    var title: String
     var itemID: Int
     var type: IngredientType
     var values: [Value]
@@ -44,6 +45,6 @@ struct Item: Identifiable, Decodable, Hashable {
     var price: Double
     var category: String
     var storeID: Int
-    var ingredients: [Ingredients]
+    var ingredients: [Ingredient]
     var imagePath: String
 }

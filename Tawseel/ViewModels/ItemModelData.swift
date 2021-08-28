@@ -23,6 +23,8 @@ final class ItemModelData: ObservableObject {
     @State var token = AppManager.Instance.token
     let itemAPI = ProcessInfo.processInfo.environment["itemAPI"]
     var error :AFError?
+    
+    
 
     var categories: [String: [Item]] {
         Dictionary(
@@ -37,11 +39,6 @@ final class ItemModelData: ObservableObject {
             urlString = urlString + "/4/items";
             headers.add(name: "Authorization", value: token)
             AF.request(urlString, headers: headers).response { response in
-//                if let data = response.data {
-//                    let json = String(data: data, encoding: String.Encoding.utf8)
-//                    print(json)
-//                }
-                
                 if let error = response.error {
                     self.error = error
                     print(error)

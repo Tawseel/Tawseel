@@ -21,24 +21,14 @@ struct itemCard: View {
 
     
     var body: some View {
-            
-            VStack {
-                Button(action: {
-                    RadioButtons(selected: self.$selected,show: self.$show)
-                
-                }, label: {
-                    VStack{
-                    imageLoader.loadImage(imageUrl: item.imagePath)
-                            .resizable()
-                            .frame(width: 155, height: 155)
-                        .cornerRadius(5)
-                        Text(item.name)
-                            .font(.caption)
-                    }
-                })
-            }
-        
-        
+        VStack(alignment: .leading) {
+        imageLoader.loadImage(imageUrl: item.imagePath)
+                .resizable()
+                .frame(width: 155, height: 155)
+            .cornerRadius(5)
+            Text(item.name)
+                .font(.caption)
+        }
     }
 }
 
@@ -49,5 +39,3 @@ struct itemCard_Previews: PreviewProvider {
     }
 }
 
-
-var data = ["Cheese", "Maio", "Ketshup"]
