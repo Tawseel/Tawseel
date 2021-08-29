@@ -6,15 +6,29 @@
 //
 
 import SwiftUI
+import SimpleCheckbox
 
 struct CheckBoxView: View {
+    @State var isChecked:Bool = false
     var title: String
+    
     
     init(ingredient: Ingredient) {
         self.title = ingredient.title
     }
+    
+    func toggle(){
+        isChecked = !isChecked;
+        
+    }
+    
     var body: some View {
-        Text("\(self.title)")
+        HStack{
+            Button(action: toggle ){
+                Image(systemName: isChecked ? "checkmark.square": "square")
+            }
+            Text(title)
+        }
     }
 }
 
