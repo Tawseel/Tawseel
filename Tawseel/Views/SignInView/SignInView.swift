@@ -41,26 +41,26 @@ struct SignInView: View {
                         }
                 })
             
-        
-        NavigationLink (
-            destination: SignUpView(),
-            label: {
-                Text("Sign up")
-            })
-            .padding(.top, 20)
+            
+            NavigationLink (
+                destination: SignUpView(),
+                label: {
+                    Text("Sign up")
+                })
+                .padding(.top, 20)
+        }
+        .offset(y: -60)
+        .padding()
+        .navigationTitle("SignIn")
+        .accentColor(Color(.label))
     }
-    .offset(y: -60)
-    .padding()
-    .navigationTitle("SignIn")
-    .accentColor(Color(.label))
-}
-
-func signIn() {
-    if !username.isEmpty && !password.isEmpty{
-        let logInCredentials = LogInCredentials(email: username, password: password)
-        loginModel.login(logInCredentials: logInCredentials)
+    
+    func signIn() {
+        if !username.isEmpty && !password.isEmpty{
+            let logInCredentials = LogInCredentials(email: username, password: password)
+            loginModel.login(logInCredentials: logInCredentials)
+        }
     }
-}
 }
 
 struct SignInView_Previews: PreviewProvider {

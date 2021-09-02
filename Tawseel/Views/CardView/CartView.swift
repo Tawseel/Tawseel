@@ -9,50 +9,28 @@ import SwiftUI
 
 struct CartView: View {
     @ObservedObject var cart: Cart = AppManager.Instance.cart
+    var orderModelData : OrderModelData = AppManager.Instance.orderModelData
     
     var body: some View {
-        if(cart.items.count > 0) {
+        if(self.cart.orders.count > 0) {
             List {
-                ForEach(cart.items) { item in
-                    CartItem(item: item)
-                }.onDelete(perform: { indexSet in
-                    cart.delete(indexSet: indexSet)
+                ForEach(self.cart.orders, id: \.self) {  order in
+                    CartItemView(order: order)
+                }
+                .onDelete(perform: { indexSet in
+                    self.cart.delete(indexSet: indexSet)
                 })
+//                Section {
+                    Button(action: {
+                        orderModelData.setNewOrders(orders: cart.orders)
+                    }) {
+                        Text("Add To Card")
+                    }
+//                }
             }
         }
         else{
             Text("Cart Empty!")
         }
-    }
-}
-
-struct CartItem: View  {
-    @ObservedObject var imageLoader: ImageLoader
-    var item: Item
-    init(item: Item){
-        self.imageLoader = ImageLoader()
-        self.item = item
-    }
-    
-    var body: some View {
-        HStack{
-            imageLoader.loadImage(imageUrl: item.imagePath)
-                .resizable()
-                .frame(width: 100, height: 100)
-                .cornerRadius(10)
-            VStack (alignment: .leading){
-                Text(item.name)
-                    .font(.headline)
-                Text(item.description)
-                    .font(.subheadline)
-            }.padding(.leading, 8)
-        }
-        .padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CartView()
     }
 }

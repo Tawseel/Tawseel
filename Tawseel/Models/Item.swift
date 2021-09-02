@@ -8,19 +8,19 @@
 import Foundation
 import SwiftUI
 
-enum IngredientType: String, Decodable, Hashable{
+enum IngredientType: String, Decodable, Hashable, Encodable{
     case CheckBox
     case MultiChoice
     case NumberPicker
 }
 
-struct Value: Decodable, Hashable{
+struct Value: Decodable, Hashable, Encodable{
     var id: Int
     var name: String
     var ingredientID: Int
 }
 
-struct IngredientConfiguration: Decodable, Hashable,Identifiable{
+struct IngredientConfiguration: Decodable, Hashable,Identifiable, Encodable{
     var id: Int
     var minimumValue: Int
     var maximumValue: Int
@@ -28,7 +28,7 @@ struct IngredientConfiguration: Decodable, Hashable,Identifiable{
     var ingredientID: Int
 }
 
-struct Ingredient: Decodable, Hashable, Identifiable{
+struct Ingredient: Decodable, Hashable, Identifiable, Encodable{
     var id: Int
     var title: String
     var itemID: Int
@@ -38,7 +38,7 @@ struct Ingredient: Decodable, Hashable, Identifiable{
 }
 
 
-struct Item: Identifiable, Decodable, Hashable {
+struct Item: Identifiable, Decodable, Hashable, Encodable{
     var id: Int
     var name: String
     var description: String
@@ -47,4 +47,21 @@ struct Item: Identifiable, Decodable, Hashable {
     var storeID: Int
     var ingredients: [Ingredient]
     var imagePath: String
+    
+    init(id: Int, name: String, description: String, price: Double, category: String, storeID: Int, ingredients: [Ingredient], imagePath: String) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.price = price
+        self.category = category
+        self.storeID = storeID
+        self.ingredients = ingredients
+        self.imagePath = imagePath
+    }
+    
+    
+    init() {
+        self.init(id: 0, name: "", description: "", price: 0.0, category: "", storeID: 0, ingredients: [], imagePath: "")
+    }
+    
 }

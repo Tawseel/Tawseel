@@ -2,40 +2,39 @@
 //  MultiChoiceView.swift
 //  Tawseel
 //
-//  Created by obaida kata on 28/08/2021.
+//  Created by obaida kata on 31/08/2021.
 //
 
 import SwiftUI
 
 struct MultiChoiceView: View {
-    var values : [Value]
-    @State private var selectedValueName  = ""
-    var title : String
+    let id: Int
+    let order: Order
+    @State var value: Int = 0
     
+    let title: String
+    let values: [Value]
     
-    init(ingredient: Ingredient) {
-        self.values = ingredient.values
+    init(ingredient: Ingredient, order:Order) {
+        self.order = order
+        self.id = ingredient.id
         self.title = ingredient.title
-        selectedValueName = self.values[0].name
+        self.values = ingredient.values
     }
     
     var body: some View {
-        VStack {
-            Text("\(title)")
-            Picker("Favorite Color", selection: $selectedValueName, content: {
-                ForEach(values , id: \.self) { value in
-                    Text("\(value.name)").tag(value.name)
+            Picker(selection: $value, label: Text("Please choose a color")) {
+                ForEach(0 ..< self.values.count) {
+                    Text(self.values[$0].name)
                 }
-            })
-            Text("Selected value name: \(selectedValueName)")
-            
-        }
-        
+            }.onChange(of: value) { value in
+                self.order.values[self.title] = self.values[value].name
+            }
     }
 }
 
 struct MultiChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        MultiChoiceView(ingredient: Ingredient(id: 1, title: "CheckBoxView", itemID: 4, type: IngredientType.NumberPicker, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []))
+        MultiChoiceView(ingredient: Ingredient(id: 2, title: "MultiChoiceView", itemID: 4, type: IngredientType.NumberPicker, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []), order: Order(item: Item()))
     }
 }

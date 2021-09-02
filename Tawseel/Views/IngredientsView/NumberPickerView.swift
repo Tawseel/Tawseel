@@ -8,40 +8,34 @@
 import SwiftUI
 
 struct NumberPickerView: View {
-    @State private var selectedValueName  = 0
-    var ingredientConfiguration : IngredientConfiguration
-    var values: [Int]
+    var order: Order
+    @State var value: Int
+    
     var minimumValue: Int
     var maximumValue: Int
-    var step: Int
-    
-    init(ingredient: Ingredient) {
-        self.ingredientConfiguration = ingredient.ingredientConfiguration[0]
-        self.minimumValue = self.ingredientConfiguration.minimumValue
-        self.maximumValue = self.ingredientConfiguration.maximumValue
-        self.step = self.ingredientConfiguration.step
-        selectedValueName = minimumValue
-        self.values = []
-        for i in stride(from: self.minimumValue, to: self.maximumValue, by: step) {
-            self.values.append(i);
-        }
+    let title: String
+    let id: Int
+    init(ingredient: Ingredient, order: Order) {
+        let ingredientConfiguration = ingredient.ingredientConfiguration[0]
+        self.minimumValue = ingredientConfiguration.minimumValue
+        self.maximumValue = ingredientConfiguration.maximumValue
+        self.title = ingredient.title
+        self.id = ingredient.id
+        self.value = self.minimumValue;
+        self.order = order
     }
     
     var body: some View {
-        VStack {
-            Picker("Favorite Color", selection: $selectedValueName, content: {
-                ForEach(values , id: \.self) { value in
-                    Text("\(value)").tag(value)
-                }
-            })
-            Text("Selected value name: \(selectedValueName)")
-            
-        }
+        Stepper(value: $value, in: self.minimumValue...self.maximumValue) {
+            Text("quantity: \(value)")
+        }.onChange(of: self.value, perform: { value in
+            self.order.values[self.title] = "\(self.value)"
+        })
     }
 }
 
 struct NumberPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue: 4, maximumValue: 50, step: 4, ingredientID: 4)]))
+        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)]), order: Order(item: Item()))
     }
 }

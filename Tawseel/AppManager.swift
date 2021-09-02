@@ -47,6 +47,18 @@ final class AppManager : ObservableObject
         }
     }
     
+    private var orderModelData1: OrderModelData?
+    
+    public var orderModelData: OrderModelData {
+        get {
+            if(orderModelData1 == nil){
+                orderModelData1 = OrderModelData()
+            }
+            
+            return orderModelData1!
+        }
+    }
+    
     @Published public var cart = Cart()
     
     private var loginModel1: LoginModel?
@@ -66,4 +78,5 @@ final class AppManager : ObservableObject
             didChange2.send(token)
         }
     }
+    
 }

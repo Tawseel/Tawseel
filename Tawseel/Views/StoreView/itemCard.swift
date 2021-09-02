@@ -12,7 +12,7 @@ struct itemCard: View {
     @State var show = false
     var item: Item
     @ObservedObject var imageLoader: ImageLoader
-    @ObservedObject var cart = AppManager.Instance.cart
+//    @ObservedObject var cart = AppManager.Instance.cart
     
     init(item: Item) {
         self.item = item

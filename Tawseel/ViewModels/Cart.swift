@@ -10,19 +10,19 @@ import Combine
 
 
 class Cart: ObservableObject{
-    var didChange = PassthroughSubject<[Item], Never>()
+    var didChange = PassthroughSubject<[Order], Never>()
     
-    public func add(item: Item){
-        items.append(item)
+    public func add(order: Order){
+        orders.append(order)
     }
     
-    @Published var items: [Item] = []{
+    @Published var orders: [Order] = []{
         didSet {
-            didChange.send(items)
+            didChange.send(orders)
         }
     }
     
     public func delete(indexSet: IndexSet){
-        items.remove(atOffsets: indexSet)
+        orders.remove(atOffsets: indexSet)
     }
 }

@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-
 struct ItemView: View {
+    var itemModelData : ItemModelData = AppManager.Instance.itemModelData
+    @ObservedObject var order: Order
     var item: Item
     @ObservedObject var imageLoader: ImageLoader
-    @ObservedObject var cart = AppManager.Instance.cart
     
     var ingredients: [IngredientType: [Ingredient]] {
         Dictionary(
@@ -21,37 +21,76 @@ struct ItemView: View {
     
     init(item: Item) {
         self.item = item
+        self.order = Order(item: item)
         imageLoader = ImageLoader()
+        for ingredient in self.item.ingredients {
+            if(ingredient.type == IngredientType.CheckBox) {
+                self.order.values[ingredient.title] = "false"
+            }
+            else if(ingredient.type == IngredientType.MultiChoice && ingredient.values.count > 0) {
+                self.order.values[ingredient.title] = ingredient.values[0].name
+            }
+            else if(ingredient.type == IngredientType.NumberPicker && ingredient.ingredientConfiguration.count > 0) {
+                self.order.values[ingredient.title] = "\(ingredient.ingredientConfiguration[0].minimumValue)"
+            }
+        }
     }
     
     var body: some View {
-            VStack(alignment: .leading) {
-                imageLoader.loadImage(imageUrl: item.imagePath)
+        
+        return NavigationView {
+            Form {
+                Section {
+                    imageLoader.loadImage(imageUrl: item.imagePath)
                         .resizable()
                         .frame(width: 155, height: 155)
-                Text(item.name)
-                    .font(.caption)
+                    Text(item.name)
+                        .font(.caption)
+                }
                 
-                Text("Ingredients")
-                    .font(.caption)
-                Spacer()
-                ForEach(ingredients[IngredientType.CheckBox] ?? [], id: \.self) { ingredient in
-                    CheckBoxView(ingredient: ingredient)
+                Section {
+                    ForEach(ingredients[IngredientType.CheckBox] ?? [], id: \.self) { ingredient in
+                        CheckBoxView(ingredient: ingredient, order: self.order)
+                    }
                 }
-                Spacer()
-                ForEach(ingredients[IngredientType.MultiChoice] ?? [], id: \.self) { ingredient in
-                    MultiChoiceView(ingredient: ingredient)
+                
+                Section {
+                    ForEach(ingredients[IngredientType.MultiChoice] ?? [], id: \.self) { ingredient in
+                        MultiChoiceView(ingredient: ingredient, order: self.order)
+                    }
                 }
-                Spacer()
-                ForEach(ingredients[IngredientType.NumberPicker] ?? [], id: \.self) { ingredient in
-                    NumberPickerView(ingredient: ingredient)
+                
+                Section {
+                    ForEach(ingredients[IngredientType.NumberPicker] ?? [], id: \.self) { ingredient in
+                        NumberPickerView(ingredient: ingredient, order: self.order)
+                    }
+                }
+                Section {
+                    Button(action: {
+                        AppManager.Instance.cart.add(order: order)
+                    }) {
+                        Text("Add To Card")
+                    }
                 }
             }
+        }
     }
 }
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView(item: AppManager.Instance.itemModelData.items[0])
+        let ingredients: [Ingredient] = [
+            Ingredient(id: 1, title: "CheckBoxView1", itemID: 4, type: IngredientType.CheckBox, values: [], ingredientConfiguration: []),
+            Ingredient(id: 2, title: "CheckBoxView2", itemID: 4, type: IngredientType.CheckBox, values: [], ingredientConfiguration: []),
+            Ingredient(id: 3, title: "CheckBoxView3", itemID: 4, type: IngredientType.CheckBox, values: [], ingredientConfiguration: []),
+            Ingredient(id: 4, title: "MultiChoiceView1", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []),
+            Ingredient(id: 5, title: "MultiChoiceView2", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []),
+            Ingredient(id: 6, title: "MultiChoiceView3", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []),
+            Ingredient(id: 7, title: "NumberPickerView4", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue: 3, maximumValue: 50, step: 4, ingredientID: 4)]),
+            Ingredient(id: 8, title: "NumberPickerView5", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue: 45, maximumValue: 50, step: 4, ingredientID: 4)]),
+        ]
+        
+        
+        ItemView(item: Item(id: 3, name: "Burger", description: "vfvfvdffvdf", price: 50, category: "Burger", storeID: 3, ingredients: ingredients, imagePath: "steak"))
     }
 }
