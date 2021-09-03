@@ -16,7 +16,7 @@ struct NumberPickerView: View {
     let title: String
     let id: Int
     init(ingredient: Ingredient, order: Order) {
-        let ingredientConfiguration = ingredient.ingredientConfiguration
+        let ingredientConfiguration = ingredient.ingredientConfiguration!
         self.minimumValue = ingredientConfiguration.minimumValue
         self.maximumValue = ingredientConfiguration.maximumValue
         self.title = ingredient.title

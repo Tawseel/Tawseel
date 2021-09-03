@@ -34,7 +34,7 @@ struct Ingredient: Decodable, Hashable, Identifiable, Encodable{
     var itemID: Int
     var type: IngredientType
     var values: [Value] = []
-    var ingredientConfiguration = IngredientConfiguration()
+    var ingredientConfiguration: IngredientConfiguration?
 }
 
 

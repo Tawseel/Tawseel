@@ -31,7 +31,7 @@ struct ItemView: View {
                 self.order.values[ingredient.title] = ingredient.values[0].name
             }
             else if(ingredient.type == IngredientType.NumberPicker) {
-                self.order.values[ingredient.title] = "\(ingredient.ingredientConfiguration.minimumValue)"
+                self.order.values[ingredient.title] = "\(ingredient.ingredientConfiguration!.minimumValue)"
             }
         }
     }
