@@ -30,8 +30,8 @@ struct ItemView: View {
             else if(ingredient.type == IngredientType.MultiChoice && ingredient.values.count > 0) {
                 self.order.values[ingredient.title] = ingredient.values[0].name
             }
-            else if(ingredient.type == IngredientType.NumberPicker && ingredient.ingredientConfiguration.count > 0) {
-                self.order.values[ingredient.title] = "\(ingredient.ingredientConfiguration[0].minimumValue)"
+            else if(ingredient.type == IngredientType.NumberPicker) {
+                self.order.values[ingredient.title] = "\(ingredient.ingredientConfiguration.minimumValue)"
             }
         }
     }
@@ -80,14 +80,14 @@ struct ItemView: View {
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
         let ingredients: [Ingredient] = [
-            Ingredient(id: 1, title: "CheckBoxView1", itemID: 4, type: IngredientType.CheckBox, values: [], ingredientConfiguration: []),
-            Ingredient(id: 2, title: "CheckBoxView2", itemID: 4, type: IngredientType.CheckBox, values: [], ingredientConfiguration: []),
-            Ingredient(id: 3, title: "CheckBoxView3", itemID: 4, type: IngredientType.CheckBox, values: [], ingredientConfiguration: []),
-            Ingredient(id: 4, title: "MultiChoiceView1", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []),
-            Ingredient(id: 5, title: "MultiChoiceView2", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []),
-            Ingredient(id: 6, title: "MultiChoiceView3", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration: []),
-            Ingredient(id: 7, title: "NumberPickerView4", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue: 3, maximumValue: 50, step: 4, ingredientID: 4)]),
-            Ingredient(id: 8, title: "NumberPickerView5", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue: 45, maximumValue: 50, step: 4, ingredientID: 4)]),
+            Ingredient(id: 1, title: "CheckBoxView1", itemID: 4, type: IngredientType.CheckBox),
+            Ingredient(id: 2, title: "CheckBoxView2", itemID: 4, type: IngredientType.CheckBox),
+            Ingredient(id: 3, title: "CheckBoxView3", itemID: 4, type: IngredientType.CheckBox),
+            Ingredient(id: 4, title: "MultiChoiceView1", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)]),
+            Ingredient(id: 5, title: "MultiChoiceView2", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)]),
+            Ingredient(id: 6, title: "MultiChoiceView3", itemID: 4, type: IngredientType.MultiChoice, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)]),
+            Ingredient(id: 7, title: "NumberPickerView4", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue: 3, maximumValue: 50, step: 4, ingredientID: 4)),
+            Ingredient(id: 8, title: "NumberPickerView5", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue: 45, maximumValue: 50, step: 4, ingredientID: 4)),
         ]
         
         

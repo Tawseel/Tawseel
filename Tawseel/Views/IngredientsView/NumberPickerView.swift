@@ -16,7 +16,7 @@ struct NumberPickerView: View {
     let title: String
     let id: Int
     init(ingredient: Ingredient, order: Order) {
-        let ingredientConfiguration = ingredient.ingredientConfiguration[0]
+        let ingredientConfiguration = ingredient.ingredientConfiguration
         self.minimumValue = ingredientConfiguration.minimumValue
         self.maximumValue = ingredientConfiguration.maximumValue
         self.title = ingredient.title
@@ -36,6 +36,6 @@ struct NumberPickerView: View {
 
 struct NumberPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: [IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)]), order: Order(item: Item()))
+        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)), order: Order(item: Item()))
     }
 }

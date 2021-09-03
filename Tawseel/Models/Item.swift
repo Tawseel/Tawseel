@@ -21,11 +21,11 @@ struct Value: Decodable, Hashable, Encodable{
 }
 
 struct IngredientConfiguration: Decodable, Hashable,Identifiable, Encodable{
-    var id: Int
-    var minimumValue: Int
-    var maximumValue: Int
-    var step: Int
-    var ingredientID: Int
+    var id: Int = 0
+    var minimumValue: Int = 1
+    var maximumValue: Int = 50
+    var step: Int = 2
+    var ingredientID: Int = 0
 }
 
 struct Ingredient: Decodable, Hashable, Identifiable, Encodable{
@@ -33,8 +33,8 @@ struct Ingredient: Decodable, Hashable, Identifiable, Encodable{
     var title: String
     var itemID: Int
     var type: IngredientType
-    var values: [Value]
-    var ingredientConfiguration: [IngredientConfiguration]
+    var values: [Value] = []
+    var ingredientConfiguration = IngredientConfiguration()
 }
 
 
@@ -58,7 +58,7 @@ struct Item: Identifiable, Decodable, Hashable, Encodable{
         self.ingredients = ingredients
         self.imagePath = imagePath
     }
-    
+
     
     init() {
         self.init(id: 0, name: "", description: "", price: 0.0, category: "", storeID: 0, ingredients: [], imagePath: "")
