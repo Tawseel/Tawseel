@@ -37,8 +37,6 @@ struct ItemView: View {
     }
     
     var body: some View {
-        
-        return NavigationView {
             Form {
                 Section {
                     imageLoader.loadImage(imageUrl: item.imagePath)
@@ -46,6 +44,7 @@ struct ItemView: View {
                         .frame(width: 155, height: 155)
                     Text(item.name)
                         .font(.caption)
+                        .bold()
                 }
                 
                 Section {
@@ -73,7 +72,6 @@ struct ItemView: View {
                     }
                 }
             }
-        }
     }
 }
 

@@ -27,7 +27,6 @@ struct ItemCategoryRow: View {
                     }
                 }
             }
-            .frame(height: 185)
         }
     }
 }
