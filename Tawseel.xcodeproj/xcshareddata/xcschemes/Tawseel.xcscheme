@@ -57,6 +57,11 @@
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
+            key = "clientAPI"
+            value = "https://tawseel.odaiq.co:5200/client"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "orderAPI"
             value = "https://tawseel.odaiq.co:5200/order"
             isEnabled = "YES">

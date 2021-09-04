@@ -29,17 +29,10 @@ struct SignInView: View {
                 .padding(.bottom, 20)
             
             
-            
-            
-            NavigationLink (
-                destination: TawseelView(),
-                isActive: $loginModel.isLogIn,
-                label: {
-                    LoginButton()
-                        .onTapGesture {
-                            signIn()
-                        }
-                })
+            LoginButton()
+                .onTapGesture {
+                    signIn()
+                }
             
             
             NavigationLink (

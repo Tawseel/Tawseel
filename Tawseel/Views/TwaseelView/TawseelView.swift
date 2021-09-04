@@ -23,7 +23,7 @@ struct TawseelView: View {
                 }
             PurchaseHistoryView()
                 .tabItem {
-                    Image(systemName: "bag")
+                    Image(systemName: "cube.box")
                     Text("Cart")
                 }
             ProfileView()

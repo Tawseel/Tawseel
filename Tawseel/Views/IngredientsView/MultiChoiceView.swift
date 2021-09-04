@@ -23,7 +23,7 @@ struct MultiChoiceView: View {
     }
     
     var body: some View {
-            Picker(selection: $value, label: Text("Please choose a color")) {
+            Picker(selection: $value, label: Text("Please choose \(title)")) {
                 ForEach(0 ..< self.values.count) {
                     Text(self.values[$0].name)
                 }

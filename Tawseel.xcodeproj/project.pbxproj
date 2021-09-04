@@ -128,7 +128,7 @@
 				8B1E5164263FE7580015C353 /* TwaseelView */,
 				8B1E5179264008810015C353 /* HomeView */,
 				8BB5F3772642CBE200D2F604 /* CardView */,
-				8B1E516F264006110015C353 /* SettingsView */,
+				8B1E516F264006110015C353 /* ProfileView */,
 				8B1E5168263FE7D20015C353 /* StoreView */,
 			);
 			path = Views;
@@ -175,13 +175,13 @@
 			path = StoreView;
 			sourceTree = "<group>";
 		};
-		8B1E516F264006110015C353 /* SettingsView */ = {
+		8B1E516F264006110015C353 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
 				8B1E5157263FE2670015C353 /* ProfileView.swift */,
 				8B648E3526E277F400B21104 /* AddressView.swift */,
 			);
-			path = SettingsView;
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		8B1E5179264008810015C353 /* HomeView */ = {

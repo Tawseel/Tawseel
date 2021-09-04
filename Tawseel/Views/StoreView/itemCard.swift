@@ -17,14 +17,14 @@ struct itemCard: View {
         self.item = item
         imageLoader = ImageLoader()
     }
-
+    
     
     var body: some View {
         VStack(alignment: .leading) {
-        imageLoader.loadImage(imageUrl: item.imagePath)
+            imageLoader.loadImage(imageUrl: item.imagePath)
                 .resizable()
                 .frame(width: 155, height: 155)
-            .cornerRadius(5)
+                .cornerRadius(5)
             Text(item.name)
                 .font(.caption)
         }

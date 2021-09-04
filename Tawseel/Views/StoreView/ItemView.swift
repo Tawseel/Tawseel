@@ -7,10 +7,12 @@
 
 import SwiftUI
 struct ItemView: View {
+    @Environment(\.presentationMode) var presentationMode
     var itemModelData : ItemModelData = AppManager.Instance.itemModelData
     @ObservedObject var order: OrderModel
     var item: Item
     @ObservedObject var imageLoader: ImageLoader
+    
     
     var ingredients: [IngredientType: [Ingredient]] {
         Dictionary(
@@ -67,6 +69,7 @@ struct ItemView: View {
                 Section {
                     Button(action: {
                         AppManager.Instance.cart.add(order: order)
+                        self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Add To Card")
                     }

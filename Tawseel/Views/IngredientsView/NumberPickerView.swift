@@ -27,7 +27,7 @@ struct NumberPickerView: View {
     
     var body: some View {
         Stepper(value: $value, in: self.minimumValue...self.maximumValue) {
-            Text("quantity: \(value)")
+            Text("quantity of \(title): \(value)")
         }.onChange(of: self.value, perform: { value in
             self.order.setValue(title: self.title, value: "\(self.value)")
         })

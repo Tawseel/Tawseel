@@ -59,7 +59,20 @@ final class AppManager : ObservableObject
         }
     }
     
+    private var clientModelData1: ClientModelData?
+    
+    public var clientModelData: ClientModelData {
+        get {
+            if(clientModelData1 == nil){
+                clientModelData1 = ClientModelData()
+            }
+            
+            return clientModelData1!
+        }
+    }
+    
     @Published public var cart = Cart()
+
     
     private var loginModel1: LoginModelData?
     

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var modelData = AppManager.Instance.modelData
+    @ObservedObject private var clientModelData = AppManager.Instance.clientModelData
     @ObservedObject private var  imageLoader: ImageLoader
     
     init(){
         imageLoader = ImageLoader()
         modelData.loadStores()
+        clientModelData.getRecommendedItemst()
     }
     
     var body: some View {
@@ -26,6 +28,8 @@ struct HomeView: View {
 //                    .clipped()
 //                    .listRowInsets(EdgeInsets())
                 
+                ItemCategoryRow(categoryName: "Recommended For You", items: clientModelData.recommendedItems)
+                
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, storesDetails: modelData.categories[key]!)
                 }
@@ -33,9 +37,6 @@ struct HomeView: View {
             }
             .navigationTitle("Tawseel")
         }
-//        .onAppear(perform: {
-//
-//        })
     }
 }
 
