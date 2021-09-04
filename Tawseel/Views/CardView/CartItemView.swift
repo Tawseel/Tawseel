@@ -10,32 +10,43 @@ import SwiftUI
 struct CartItemView: View  {
     @ObservedObject var imageLoader: ImageLoader
     let item: Item
-    let order: OrderModel
-    init(order: OrderModel){
+    let order: Order
+    init(orderModel: OrderModel){
         self.imageLoader = ImageLoader()
-        self.item = order.order.item
+        self.item = orderModel.order.item
+        self.order = orderModel.order
+    }
+    
+    init(order: Order){
+        self.imageLoader = ImageLoader()
         self.order = order
+        self.item = order.item
+        
     }
     
     var body: some View {
         HStack{
-            imageLoader.loadImage(imageUrl: item.imagePath)
-                .resizable()
-                .frame(width: 100, height: 100)
-                .cornerRadius(10)
-            VStack (alignment: .leading){
+            VStack (alignment: .center){
+                imageLoader.loadImage(imageUrl: item.imagePath)
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(10)
                 Text(item.name)
                     .font(.headline)
+            }
+            VStack (alignment: .leading){
                 Text(item.description)
                     .font(.subheadline)
-                ForEach(self.order.order.values.indices, id: \.self) { i in
-                    let value = self.order.order.values[i].ingredientName
-                    let key = self.order.order.values[i].ingredientValue
-                    if(value == "true") {
-                        Text("With \(key)")
-                    }
-                    else if(value != "false") {
-                        Text("\(key): \(value)")
+                ForEach(self.order.values.indices, id: \.self) { i in
+                    let value = self.order.values[i].ingredientName
+                    let key = self.order.values[i].ingredientValue
+                    if(key.count > 0 && value.count > 0) {
+                        if(key == "true") {
+                            Text("With \(value)")
+                        }
+                        else if(key != "false") {
+                            Text("\(key): \(value)")
+                        }
                     }
                 }
                 
@@ -59,6 +70,6 @@ struct CartItemView_Previews: PreviewProvider {
             Ingredient(id: 8, title: "NumberPickerView5", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue: 45, maximumValue: 50, step: 4, ingredientID: 4)),
         ]
         
-        CartItemView(order: OrderModel(item: Item(id: 0, name: "the best burger ever!!!", description: "db ngfdbgbgf", price: 50, category: "Burger", storeID: 0, ingredients: ingredients, imagePath: "")))
+        CartItemView(orderModel: OrderModel(item: Item(id: 0, name: "the best burger ever!!!", description: "db ngfdbgbgf", price: 50, category: "Burger", storeID: 0, ingredients: ingredients, imagePath: "")))
     }
 }

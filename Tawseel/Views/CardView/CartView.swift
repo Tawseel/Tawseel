@@ -15,7 +15,7 @@ struct CartView: View {
         if(self.cart.orders.count > 0) {
             List {
                 ForEach(self.cart.orders, id: \.self) {  order in
-                    CartItemView(order: order)
+                    CartItemView(orderModel: order)
                 }
                 .onDelete(perform: { indexSet in
                     self.cart.delete(indexSet: indexSet)

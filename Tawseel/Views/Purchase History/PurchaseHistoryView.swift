@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct PurchaseHistoryView: View {
+    @ObservedObject var orderModelData: OrderModelData = AppManager.Instance.orderModelData
+    
+    init() {
+    }
+    
     var body: some View {
-        Text("Hello, World!")
+        ScrollView  {
+            ForEach(self.orderModelData.orders, id: \.self) {  order in
+                HStack {
+                    CartItemView(order: order)
+                    Rectangle()
+                        .fill(Color.black)
+                        .frame(width: 1, height: 120, alignment: .center)
+                        .edgesIgnoringSafeArea(.horizontal)
+
+                    Text("\(order.status.rawValue)")
+                        .bold()
+                }
+            }
+        }
+        .onAppear() {
+            self.orderModelData.getAllPurchaseHistory()
+        }
     }
 }
 

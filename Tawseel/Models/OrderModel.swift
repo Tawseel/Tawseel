@@ -12,8 +12,6 @@ class OrderModel: Hashable, ObservableObject{
         return lhs.order.values == rhs.order.values
     }
 
-//    @Published var values : [String: String] = [:]
-//    @Published var item : Item
     @Published var order : Order
     
     init(item: Item) {
@@ -31,12 +29,22 @@ class OrderModel: Hashable, ObservableObject{
     }
 }
 
-struct Order: Encodable, Equatable, Hashable{
+struct Order: Encodable, Equatable, Hashable, Decodable{
     var values : [CardOrderValue]
     let item : Item
+    var status = OrderStatus.New
+    var dateTime = ""
 }
 
-struct CardOrderValue: Encodable, Equatable, Comparable, Hashable {
+enum OrderStatus: String, Codable {
+    case New
+    case Accepted
+    case Ready
+    case OnWay
+    case Delivered
+}
+
+struct CardOrderValue: Encodable, Equatable, Comparable, Hashable, Decodable {
     static func < (lhs: CardOrderValue, rhs: CardOrderValue) -> Bool {
         return lhs.ingredientName.count < rhs.ingredientName.count
     }
