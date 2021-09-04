@@ -8,7 +8,7 @@
 import SwiftUI
 struct ItemView: View {
     var itemModelData : ItemModelData = AppManager.Instance.itemModelData
-    @ObservedObject var order: Order
+    @ObservedObject var order: OrderModel
     var item: Item
     @ObservedObject var imageLoader: ImageLoader
     
@@ -21,17 +21,17 @@ struct ItemView: View {
     
     init(item: Item) {
         self.item = item
-        self.order = Order(item: item)
+        self.order = OrderModel(item: item)
         imageLoader = ImageLoader()
         for ingredient in self.item.ingredients {
             if(ingredient.type == IngredientType.CheckBox) {
-                self.order.values[ingredient.title] = "false"
+                self.order.setValue(title: ingredient.title, value: "false")
             }
             else if(ingredient.type == IngredientType.MultiChoice && ingredient.values.count > 0) {
-                self.order.values[ingredient.title] = ingredient.values[0].name
+                self.order.setValue(title: ingredient.title, value: ingredient.values[0].name)
             }
             else if(ingredient.type == IngredientType.NumberPicker) {
-                self.order.values[ingredient.title] = "\(ingredient.ingredientConfiguration!.minimumValue)"
+                self.order.setValue(title: ingredient.title, value: "\(ingredient.ingredientConfiguration!.minimumValue)")
             }
         }
     }

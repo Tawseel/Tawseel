@@ -32,4 +32,8 @@ class ImageLoader: ObservableObject {
         
         return image
     }
+    
+    public func loadLocal(iconName: String) -> Image {
+        return Image(systemName: iconName)
+    }
 }

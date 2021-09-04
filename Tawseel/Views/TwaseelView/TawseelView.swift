@@ -21,10 +21,15 @@ struct TawseelView: View {
                     Image(systemName: "bag")
                     Text("Cart")
                 }
-            SettingsView()
+            PurchaseHistoryView()
                 .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
+                    Image(systemName: "bag")
+                    Text("Cart")
+                }
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
                 }
         }
         .navigationBarTitle("Tawssel", displayMode: .inline)

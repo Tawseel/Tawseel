@@ -16,7 +16,7 @@ final class OrderModelData: ObservableObject {
     var error :AFError?
     var headers: HTTPHeaders = []
     
-    func setNewOrders(orders : [Order]) {
+    func setNewOrders(orders : [OrderModel]) {
         let ordersRequest = getOrders(orders: orders)
         if var urlString = orderAPI {
             urlString = urlString + "/addOrders";
@@ -36,10 +36,10 @@ final class OrderModelData: ObservableObject {
         }
     }
     
-    func getOrders(orders: [Order]) -> [OrderRequest]{
-        var tOrders: [OrderRequest] = []
+    func getOrders(orders: [OrderModel]) -> [Order]{
+        var tOrders: [Order] = []
         for order in orders {
-            tOrders.append(OrderRequest(order: order))
+            tOrders.append(order.order)
         }
         
         return tOrders

@@ -61,12 +61,12 @@ final class AppManager : ObservableObject
     
     @Published public var cart = Cart()
     
-    private var loginModel1: LoginModel?
+    private var loginModel1: LoginModelData?
     
-    public var loginModel: LoginModel {
+    public var loginModel: LoginModelData {
         get {
             if(loginModel1 == nil){
-                loginModel1 = LoginModel()
+                loginModel1 = LoginModelData()
             }
             
             return loginModel1!

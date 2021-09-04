@@ -10,12 +10,11 @@ import SwiftUI
 struct CartItemView: View  {
     @ObservedObject var imageLoader: ImageLoader
     let item: Item
-    let order: Order
-    init(order: Order){
+    let order: OrderModel
+    init(order: OrderModel){
         self.imageLoader = ImageLoader()
-        self.item = order.item
+        self.item = order.order.item
         self.order = order
-        self.order.print()
     }
     
     var body: some View {
@@ -29,13 +28,14 @@ struct CartItemView: View  {
                     .font(.headline)
                 Text(item.description)
                     .font(.subheadline)
-                ForEach(self.order.values.keys.sorted(), id: \.self) { key in
-                    let value = self.order.values[key] ?? "N/A"
+                ForEach(self.order.order.values.indices, id: \.self) { i in
+                    let value = self.order.order.values[i].ingredientName
+                    let key = self.order.order.values[i].ingredientValue
                     if(value == "true") {
                         Text("With \(key)")
                     }
                     else if(value != "false") {
-                        Text("\(key): \(self.order.values[key] ?? "N/A")")
+                        Text("\(key): \(value)")
                     }
                 }
                 
@@ -59,6 +59,6 @@ struct CartItemView_Previews: PreviewProvider {
             Ingredient(id: 8, title: "NumberPickerView5", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue: 45, maximumValue: 50, step: 4, ingredientID: 4)),
         ]
         
-        CartItemView(order: Order(item: Item(id: 0, name: "the best burger ever!!!", description: "db ngfdbgbgf", price: 50, category: "Burger", storeID: 0, ingredients: ingredients, imagePath: "")))
+        CartItemView(order: OrderModel(item: Item(id: 0, name: "the best burger ever!!!", description: "db ngfdbgbgf", price: 50, category: "Burger", storeID: 0, ingredients: ingredients, imagePath: "")))
     }
 }

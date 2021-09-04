@@ -8,7 +8,7 @@ import Combine
 import Foundation
 import Alamofire
 
-final class LoginModel: ObservableObject{
+final class LoginModelData: ObservableObject{
     var didChange = PassthroughSubject<Bool, Never>()
     let loginApi = ProcessInfo.processInfo.environment["loginApi"]
     var error :AFError?

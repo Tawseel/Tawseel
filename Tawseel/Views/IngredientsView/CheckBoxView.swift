@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
-import SimpleCheckbox
 
 
 struct CheckBoxView: View {
     let id: Int
-    let order: Order
+    let order: OrderModel
     @State var isChecked:Bool
     var title: String
     
     
-    init(ingredient: Ingredient, order: Order) {
+    init(ingredient: Ingredient, order: OrderModel) {
         self.title = ingredient.title
         self.order = order
         self.id = ingredient.id
@@ -25,7 +24,8 @@ struct CheckBoxView: View {
     
     func toggle(){
         isChecked = !isChecked;
-        self.order.values[self.title] = "\(isChecked)"
+        self.order.setValue(title: self.title, value: "\(isChecked)")
+
     }
     
     var body: some View {
@@ -40,6 +40,6 @@ struct CheckBoxView: View {
 
 struct CheckBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckBoxView(ingredient: Ingredient(id: 1, title: "CheckBoxView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)), order: Order(item: Item()))
+        CheckBoxView(ingredient: Ingredient(id: 1, title: "CheckBoxView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)), order: OrderModel(item: Item()))
     }
 }

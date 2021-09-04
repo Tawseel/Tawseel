@@ -10,13 +10,13 @@ import Combine
 
 
 class Cart: ObservableObject{
-    var didChange = PassthroughSubject<[Order], Never>()
+    var didChange = PassthroughSubject<[OrderModel], Never>()
     
-    public func add(order: Order){
+    public func add(order: OrderModel){
         orders.append(order)
     }
     
-    @Published var orders: [Order] = []{
+    @Published var orders: [OrderModel] = []{
         didSet {
             didChange.send(orders)
         }

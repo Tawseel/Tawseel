@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct NumberPickerView: View {
-    var order: Order
+    var order: OrderModel
     @State var value: Int
     
     var minimumValue: Int
     var maximumValue: Int
     let title: String
     let id: Int
-    init(ingredient: Ingredient, order: Order) {
+    init(ingredient: Ingredient, order: OrderModel) {
         let ingredientConfiguration = ingredient.ingredientConfiguration!
         self.minimumValue = ingredientConfiguration.minimumValue
         self.maximumValue = ingredientConfiguration.maximumValue
@@ -29,13 +29,13 @@ struct NumberPickerView: View {
         Stepper(value: $value, in: self.minimumValue...self.maximumValue) {
             Text("quantity: \(value)")
         }.onChange(of: self.value, perform: { value in
-            self.order.values[self.title] = "\(self.value)"
+            self.order.setValue(title: self.title, value: "\(self.value)")
         })
     }
 }
 
 struct NumberPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)), order: Order(item: Item()))
+        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, step: 4, ingredientID: 4)), order: OrderModel(item: Item()))
     }
 }
