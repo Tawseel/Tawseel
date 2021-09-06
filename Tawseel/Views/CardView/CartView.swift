@@ -13,6 +13,9 @@ struct CartView: View {
     var orderModelData : OrderModelData = AppManager.Instance.orderModelData
     @State private var showingPopover = false
     @ObservedObject var imageLoader: ImageLoader  = ImageLoader()
+    @State private var value = 0
+    
+    let paymentMethods = ["Credit Card", "chash"]
     
     var body: some View {
         if(self.cart.orders.count > 0) {
@@ -40,12 +43,15 @@ struct CartView: View {
                         .popover(isPresented: $showingPopover) {
                             Form {
                                 Section {
-                                    Text("Ship Details: ").bold()
+                                    Text("Order Details: ").bold()
                                 }
                                 Section {
                                     Text("First Name: \(client.firstName)").bold()
                                     Text("Last Name: \(client.lastName)").bold()
                                     Text("Phone number: \(client.phoneNumber)").bold()
+                                }
+                                
+                                Section {
                                     Text("Street Name: \(client.defaultAddress!.streetName)").bold()
                                     Text("Street Number: \(client.defaultAddress!.streetNumber)").bold()
                                     Text("Home Number: \(client.defaultAddress!.homeNumber)").bold()
@@ -54,8 +60,21 @@ struct CartView: View {
                                 }
                                 
                                 Section {
+                                    Text("Points: \(client.points)").bold()
+                                }
+                                
+                                Section {
+                                    Picker(selection: $value, label: Text("Payment Method")) {
+                                        ForEach(0 ..< self.paymentMethods.count) {
+                                            Text(self.paymentMethods[$0])
+                                        }
+                                    }
+                                    Text("Card Number: 1234-5678-9876-5432").bold()
+                                }
+                                
+                                Section {
                                     Button("Confirm") {
-                                        //                                    orderModelData.setNewOrders(orders: orderModelData.orders)
+                                        orderModelData.setNewOrders(orders: cart.orders)
                                         showingPopover = false
                                     }
                                 }

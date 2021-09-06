@@ -13,20 +13,23 @@ struct SignInView: View {
     @State var username = "obaida2@gmail.com"
     @State var password = "obaida1234"
     @ObservedObject var loginModel = AppManager.Instance.loginModel
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
             TextField("Username", text: $username)
                 .padding()
-                .background(lightGreyColor)
+                .border(colorScheme == .dark ? Color.white : Color.black)
                 .cornerRadius(5.0)
-                .padding(.bottom, 20)
+                .padding(.bottom, 40)
+                
             
             SecureField("Password", text: $password)
                 .padding()
-                .background(lightGreyColor)
+                .border(colorScheme == .dark ? Color.white : Color.black)
                 .cornerRadius(5.0)
-                .padding(.bottom, 20)
+                .padding(.bottom, 40)
+                
             
             
             LoginButton()

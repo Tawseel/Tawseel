@@ -38,14 +38,14 @@ struct CartItemView: View  {
                 Text(item.description)
                     .font(.subheadline)
                 ForEach(self.order.values.indices, id: \.self) { i in
-                    let value = self.order.values[i].ingredientName
-                    let key = self.order.values[i].ingredientValue
-                    if(key.count > 0 && value.count > 0) {
-                        if(key == "true") {
-                            Text("With \(value)")
+                    let ingredientValue = self.order.values[i].ingredientValue
+                    let ingredientName = self.order.values[i].ingredientName
+                    if(ingredientName.count > 0 && ingredientValue.count > 0) {
+                        if(ingredientValue == "true") {
+                            Text("With \(ingredientName)")
                         }
-                        else if(key != "false") {
-                            Text("\(key): \(value)")
+                        else if(ingredientValue != "false") {
+                            Text("\(ingredientName): \(ingredientValue)")
                         }
                     }
                 }

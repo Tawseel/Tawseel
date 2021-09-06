@@ -43,11 +43,12 @@ struct ItemView: View {
                 Section {
                     imageLoader.loadImage(imageUrl: item.imagePath)
                         .resizable()
-                        .frame(width: 155, height: 155)
+                        .frame(width: 140, height: 140)
+                        .cornerRadius(5)
                     Text(item.name)
                         .font(.caption)
                         .bold()
-                }
+                }.padding(.leading, 15)
                 
                 Section {
                     ForEach(ingredients[IngredientType.CheckBox] ?? [], id: \.self) { ingredient in

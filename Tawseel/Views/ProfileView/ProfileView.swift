@@ -14,25 +14,26 @@ struct ProfileView: View {
     @State private var showingPopover = false
     @State var newAddress = Address()
     @State var defaultAddress = AppManager.Instance.clientModelData.client.defaultAddress
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Form {
             Section {
                 TextField("First Name", text: $clientModelData.client.firstName)
                     .padding(4.0)
-                    .background(lightGreyColor)
+                    .border(colorScheme == .dark ? Color.white : Color.black)
                     .cornerRadius(5.0)
                 TextField("Last Name", text: $clientModelData.client.lastName)
                     .padding(4.0)
-                    .background(lightGreyColor)
+                    .border(colorScheme == .dark ? Color.white : Color.black)
                     .cornerRadius(5.0)
                 TextField("Phone number", text: $clientModelData.client.phoneNumber)
                     .padding(4.0)
-                    .background(lightGreyColor)
+                    .border(colorScheme == .dark ? Color.white : Color.black)
                     .cornerRadius(5.0)
                 TextField("Email", text: $clientModelData.client.email)
                     .padding(4.0)
-                    .background(lightGreyColor)
+                    .border(colorScheme == .dark ? Color.white : Color.black)
                     .cornerRadius(5.0)
                 
             }

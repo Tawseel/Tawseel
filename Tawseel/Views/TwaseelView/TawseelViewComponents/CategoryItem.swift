@@ -25,6 +25,7 @@ struct CategoryItem: View {
                         .cornerRadius(5)
                     Text(store.name)
                         .font(.caption)
+                        .bold()
         }
         .padding(.leading, 15)
     }

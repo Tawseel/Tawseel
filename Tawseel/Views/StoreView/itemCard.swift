@@ -27,7 +27,8 @@ struct itemCard: View {
                 .cornerRadius(5)
             Text(item.name)
                 .font(.caption)
-        }
+                .bold()
+        }.padding(.leading, 15)
     }
 }
 
