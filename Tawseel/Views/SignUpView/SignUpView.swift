@@ -8,37 +8,39 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State var firstName = ""
-    @State var lastName = ""
-    @State var password = ""
-    @State var passwordAgain = ""
-    
+    @ObservedObject var loginModel = AppManager.Instance.loginModel
+    @State var client = ClientDetails()
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     var body: some View {
         VStack {
             Form {
                 Section{
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
+                    TextField("First Name", text: $client.firstName)
+                    TextField("Last Name", text: $client.lastName)
                 }
                 
                 Section {
-                    SecureField("Create Password", text: $password)
-                    SecureField("Confirm Password", text: $passwordAgain)
+                    SecureField("Email", text: $client.email)
+                    SecureField("Password", text: $client.password)
                 }
             }
             
-            Button(action: {}, label: {
-                Text("Sign Up")
-                    .bold()
-                    .frame(width: 250, height: 50, alignment:  .center)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+            Button(action: {
+                self.onSignUpSucess(isSucess: true);
+//                loginModel.signUp(client: client, action: onSignUpSucess)
+                
+            }, label: {
+                LoginButton(text: "Sign up")
                 
             })
             .padding()
         }
-//        .navigationTitle("Create Account")
+    }
+    
+    func onSignUpSucess(isSucess: Bool) {
+        if(isSucess) {
+            self.mode.wrappedValue.dismiss()
+        }
     }
 }
 

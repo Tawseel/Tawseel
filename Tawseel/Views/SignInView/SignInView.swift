@@ -21,7 +21,7 @@ struct SignInView: View {
                 .padding()
                 .border(colorScheme == .dark ? Color.white : Color.black)
                 .cornerRadius(5.0)
-                .padding(.bottom, 40)
+
                 
             
             SecureField("Password", text: $password)
@@ -32,7 +32,7 @@ struct SignInView: View {
                 
             
             
-            LoginButton()
+            LoginButton(text: "LOGIN")
                 .onTapGesture {
                     signIn()
                 }
@@ -68,8 +68,9 @@ struct SignInView_Previews: PreviewProvider {
 }
 
 struct LoginButton: View {
+    var text: String
     var body: some View {
-        Text("LOGIN")
+        Text(text)
             .bold()
             .frame(width: 280, height: 50)
             .background(Color.blue)

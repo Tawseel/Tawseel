@@ -41,5 +41,28 @@ final class LoginModelData: ObservableObject{
                        }
         }
     }
+    
+    public func signUp(client: ClientDetails,  action: @escaping (Bool) -> Void){
+        if var urlString =  loginApi {
+            urlString = urlString + "/register/client"
+            AF.request(urlString,
+                       method: .post,
+                       parameters: client,
+                       encoder: JSONParameterEncoder.default).responseJSON{ response in
+                        if let error = response.error {
+                            self.error = error
+                        }
+                        else if let data = response.value as? Bool {
+                            if(data)
+                            {
+                                DispatchQueue(label: "concurrentQueue", attributes: .concurrent).async {
+                                action(data)
+                                }
+                            }
+                        }
+                       }
+        }
+    }
+    
 }
 

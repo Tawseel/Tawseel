@@ -7,6 +7,16 @@
 
 import Foundation
 
+
+struct ClientDetails: Decodable, Encodable{
+    var firstName: String = ""
+    var lastName: String = ""
+    var phoneNumber: String = ""
+    var email: String = ""
+    var password: String = ""
+}
+
+
 struct Client: Hashable, Decodable, Encodable{
     var id: Int
     var firstName: String
