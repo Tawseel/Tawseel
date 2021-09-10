@@ -25,6 +25,10 @@ struct ItemView: View {
         self.item = item
         self.order = OrderModel(item: item)
         imageLoader = ImageLoader()
+        initOrder()
+    }
+    
+    func initOrder() {
         for ingredient in self.item.ingredients {
             if(ingredient.type == IngredientType.CheckBox) {
                 self.order.setValue(title: ingredient.title, value: "false")
@@ -39,43 +43,54 @@ struct ItemView: View {
     }
     
     var body: some View {
-            Form {
-                Section {
-                    imageLoader.loadImage(imageUrl: item.imagePath)
-                        .resizable()
-                        .frame(width: 140, height: 140)
-                        .cornerRadius(5)
-                    Text(item.name)
-                        .font(.caption)
-                        .bold()
-                }.padding(.leading, 15)
-                
-                Section {
-                    ForEach(ingredients[IngredientType.CheckBox] ?? [], id: \.self) { ingredient in
-                        CheckBoxView(ingredient: ingredient, order: self.order)
-                    }
-                }
-                
-                Section {
-                    ForEach(ingredients[IngredientType.MultiChoice] ?? [], id: \.self) { ingredient in
-                        MultiChoiceView(ingredient: ingredient, order: self.order)
-                    }
-                }
-                
-                Section {
-                    ForEach(ingredients[IngredientType.NumberPicker] ?? [], id: \.self) { ingredient in
-                        NumberPickerView(ingredient: ingredient, order: self.order)
-                    }
-                }
-                Section {
-                    Button(action: {
-                        AppManager.Instance.cart.add(order: order)
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Add To Card")
-                    }
+        Form {
+            Section {
+                imageLoader.loadImage(imageUrl: item.imagePath)
+                    .resizable()
+                    .frame(width: 140, height: 140)
+                    .cornerRadius(5)
+                Text(item.name)
+                    .font(.caption)
+                    .bold()
+            }.padding(.leading, 15)
+            
+            Section {
+                ForEach(ingredients[IngredientType.CheckBox] ?? [], id: \.self) { ingredient in
+                    CheckBoxView(ingredient: ingredient, order: self.order)
                 }
             }
+            
+            Section {
+                ForEach(ingredients[IngredientType.MultiChoice] ?? [], id: \.self) { ingredient in
+                    MultiChoiceView(ingredient: ingredient, order: self.order)
+                }
+            }
+            
+            Section {
+                ForEach(ingredients[IngredientType.NumberPicker] ?? [], id: \.self) { ingredient in
+                    NumberPickerView(ingredient: ingredient, order: self.order)
+                }
+            }
+            Section {
+                Button(action: {
+                    resetOrder()
+                    AppManager.Instance.cart.add(order: order)
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Add To Cart")
+                }
+            }
+        }
+        .onDisappear {
+            resetOrder()
+        }
+        
+    }
+    
+    func resetOrder() {
+        self.order.reset()
+        initOrder()
+        
     }
 }
 

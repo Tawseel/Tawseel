@@ -18,6 +18,10 @@ class OrderModel: Hashable, ObservableObject{
         self.order = Order(values: [], item: item)
     }
     
+    func reset() {
+        self.order.values = []
+    }
+    
     
     public func setValue(title: String, value: String) {
         self.order.setValue(title: title, value: value)

@@ -21,12 +21,6 @@ struct HomeView: View {
     var body: some View {
         VStack {
             List {
-//                imageLoader.loadImage(imageUrl: modelData.features[0].imagePath)
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(height: 200)
-//                    .clipped()
-//                    .listRowInsets(EdgeInsets())
                 
                 ItemCategoryRow(categoryName: "Recommended For You", items: clientModelData.recommendedItems)
                 

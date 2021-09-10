@@ -94,7 +94,7 @@ final class ClientModelData: ObservableObject {
                     do {
                         //Decode dataResponse received from a network request
                         let decoder = JSONDecoder()
-                        self.recommendedItems = try decoder.decode([Item].self, from: data)
+                        self.recommendedItems  = try decoder.decode([Item].self, from: data)
                     } catch let parsingError {
                         print("Error", parsingError)
                     }
