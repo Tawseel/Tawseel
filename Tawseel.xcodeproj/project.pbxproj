@@ -25,6 +25,7 @@
 		8B2622CA26DAB7D300701FAC /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2622C926DAB7D300701FAC /* NumberPickerView.swift */; };
 		8B3C01BF26DE8A79007BDBCD /* ChoiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C01BE26DE8A79007BDBCD /* ChoiceButton.swift */; };
 		8B419EFE26492A1F0032088A /* SmartUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B419EFD26492A1F0032088A /* SmartUIImage.swift */; };
+		8B4A2C0926EBE85C00627938 /* OrderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4A2C0826EBE85C00627938 /* OrderTest.swift */; };
 		8B4FD25B2646C5A200C004BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4FD25A2646C5A200C004BF /* Alamofire */; };
 		8B568F4726DEA35400C50725 /* MultiChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B568F4626DEA35400C50725 /* MultiChoiceView.swift */; };
 		8B648E3426E2666800B21104 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B648E3326E2666800B21104 /* Client.swift */; };
@@ -54,6 +55,16 @@
 		8BF20B4B26320F75007AC659 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF20B4726320F75007AC659 /* FavoriteButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8B4A2C0B26EBE85C00627938 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BE15FC42631F0CD001D1DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BE15FCB2631F0CD001D1DA0;
+			remoteInfo = Tawseel;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8B03AF2C26404E17001AF518 /* itemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemCard.swift; sourceTree = "<group>"; };
 		8B03AF2F26404EF9001AF518 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -75,6 +86,9 @@
 		8B2622C926DAB7D300701FAC /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		8B3C01BE26DE8A79007BDBCD /* ChoiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButton.swift; sourceTree = "<group>"; };
 		8B419EFD26492A1F0032088A /* SmartUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartUIImage.swift; sourceTree = "<group>"; };
+		8B4A2C0626EBE85C00627938 /* OrderTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B4A2C0826EBE85C00627938 /* OrderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTest.swift; sourceTree = "<group>"; };
+		8B4A2C0A26EBE85C00627938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B568F4626DEA35400C50725 /* MultiChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiceView.swift; sourceTree = "<group>"; };
 		8B648E3326E2666800B21104 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		8B648E3526E277F400B21104 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
@@ -106,6 +120,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8B4A2C0326EBE85C00627938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BE15FC92631F0CD001D1DA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +250,15 @@
 			path = ViewUtilities;
 			sourceTree = "<group>";
 		};
+		8B4A2C0726EBE85C00627938 /* OrderTest */ = {
+			isa = PBXGroup;
+			children = (
+				8B4A2C0826EBE85C00627938 /* OrderTest.swift */,
+				8B4A2C0A26EBE85C00627938 /* Info.plist */,
+			);
+			path = OrderTest;
+			sourceTree = "<group>";
+		};
 		8BB5F3772642CBE200D2F604 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE15FCE2631F0CD001D1DA0 /* Tawseel */,
+				8B4A2C0726EBE85C00627938 /* OrderTest */,
 				8BE15FCD2631F0CD001D1DA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -258,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE15FCC2631F0CD001D1DA0 /* Tawseel.app */,
+				8B4A2C0626EBE85C00627938 /* OrderTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +366,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8B4A2C0526EBE85C00627938 /* OrderTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B4A2C0F26EBE85C00627938 /* Build configuration list for PBXNativeTarget "OrderTest" */;
+			buildPhases = (
+				8B4A2C0226EBE85C00627938 /* Sources */,
+				8B4A2C0326EBE85C00627938 /* Frameworks */,
+				8B4A2C0426EBE85C00627938 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B4A2C0C26EBE85C00627938 /* PBXTargetDependency */,
+			);
+			name = OrderTest;
+			productName = OrderTest;
+			productReference = 8B4A2C0626EBE85C00627938 /* OrderTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8BE15FCB2631F0CD001D1DA0 /* Tawseel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BE15FE02631F0D1001D1DA0 /* Build configuration list for PBXNativeTarget "Tawseel" */;
@@ -360,9 +410,13 @@
 		8BE15FC42631F0CD001D1DA0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					8B4A2C0526EBE85C00627938 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 8BE15FCB2631F0CD001D1DA0;
+					};
 					8BE15FCB2631F0CD001D1DA0 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -385,11 +439,19 @@
 			projectRoot = "";
 			targets = (
 				8BE15FCB2631F0CD001D1DA0 /* Tawseel */,
+				8B4A2C0526EBE85C00627938 /* OrderTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8B4A2C0426EBE85C00627938 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BE15FCA2631F0CD001D1DA0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,6 +467,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8B4A2C0226EBE85C00627938 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B4A2C0926EBE85C00627938 /* OrderTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BE15FC82631F0CD001D1DA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +523,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8B4A2C0C26EBE85C00627938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BE15FCB2631F0CD001D1DA0 /* Tawseel */;
+			targetProxy = 8B4A2C0B26EBE85C00627938 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8BE15FDA2631F0D1001D1DA0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -465,6 +543,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8B4A2C0D26EBE85C00627938 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8E38EMWG6;
+				INFOPLIST_FILE = OrderTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hmhh.OrderTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tawseel.app/Tawseel";
+			};
+			name = Debug;
+		};
+		8B4A2C0E26EBE85C00627938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8E38EMWG6;
+				INFOPLIST_FILE = OrderTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hmhh.OrderTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tawseel.app/Tawseel";
+			};
+			name = Release;
+		};
 		8BE15FDE2631F0D1001D1DA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,6 +750,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8B4A2C0F26EBE85C00627938 /* Build configuration list for PBXNativeTarget "OrderTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B4A2C0D26EBE85C00627938 /* Debug */,
+				8B4A2C0E26EBE85C00627938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8BE15FC72631F0CD001D1DA0 /* Build configuration list for PBXProject "Tawseel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

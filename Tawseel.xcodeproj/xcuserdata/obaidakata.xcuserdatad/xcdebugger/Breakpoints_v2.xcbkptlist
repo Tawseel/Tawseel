@@ -182,16 +182,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D1E6D535-97FE-4EDE-B17E-9A285F10B26C"
+            uuid = "2C2E3BF7-D655-4970-B4E7-6A3BA798460A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tawseel/Views/SignUpView/SignUpView.swift"
+            filePath = "Tawseel/Models/OrderModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "onSignUpSucess(isSucess:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "setValue(title:value:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

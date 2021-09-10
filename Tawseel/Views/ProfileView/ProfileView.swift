@@ -62,19 +62,19 @@ struct ProfileView: View {
                 .popover(isPresented: $showingPopover) {
                     TextField("Street Name", text: $newAddress.streetName)
                         .padding(4.0)
-                        .background(lightGreyColor)
+                        .border(colorScheme == .dark ? Color.white : Color.black)
                         .cornerRadius(5.0)
                     TextField("Street Number", text: $newAddress.streetNumber)
                         .padding(4.0)
-                        .background(lightGreyColor)
+                        .border(colorScheme == .dark ? Color.white : Color.black)
                         .cornerRadius(5.0)
                     TextField("Home Number", text: $newAddress.homeNumber)
                         .padding(4.0)
-                        .background(lightGreyColor)
+                        .border(colorScheme == .dark ? Color.white : Color.black)
                         .cornerRadius(5.0)
                     TextField("Floor Number", text: $newAddress.floorNumber)
                         .padding(4.0)
-                        .background(lightGreyColor)
+                        .border(colorScheme == .dark ? Color.white : Color.black)
                         .cornerRadius(5.0)
                     
                     Button("Add") {

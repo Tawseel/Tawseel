@@ -28,9 +28,3 @@ struct AddressView: View {
         }
     }
 }
-
-//struct AddressView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddressView(addresses: [Address(streetName: "streetName3", streetNumber: "33", homeNumber: "53", floorNumber: "3")])
-//    }
-//}

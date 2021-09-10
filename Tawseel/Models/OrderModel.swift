@@ -20,7 +20,7 @@ class OrderModel: Hashable, ObservableObject{
     
     
     public func setValue(title: String, value: String) {
-        self.order.values.append(CardOrderValue(ingredientName: title, ingredientValue: value))
+        self.order.setValue(title: title, value: value)
     }
     
     
@@ -29,11 +29,27 @@ class OrderModel: Hashable, ObservableObject{
     }
 }
 
-struct Order: Encodable, Equatable, Hashable, Decodable{
+public struct Order: Encodable, Equatable, Hashable, Decodable{
     var values : [CardOrderValue]
     let item : Item
     var status = OrderStatus.New
     var dateTime = ""
+    
+    mutating func setValue(title: String, value: String) {
+        var isExist = false
+        
+        for i in 0..<values.count {
+            if(values[i].ingredientName == title) {
+                values[i].ingredientValue = value
+                isExist = true
+                break
+            }
+        }
+        
+        if(!isExist) {
+            values.append(CardOrderValue(ingredientName: title, ingredientValue: value))
+        }
+    }
 }
 
 enum OrderStatus: String, Codable {
