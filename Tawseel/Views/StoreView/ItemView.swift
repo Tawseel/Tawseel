@@ -73,24 +73,18 @@ struct ItemView: View {
             }
             Section {
                 Button(action: {
-                    resetOrder()
                     AppManager.Instance.cart.add(order: order)
+                    resetOrder()
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Add To Cart")
                 }
             }
         }
-        .onDisappear {
-            resetOrder()
-        }
-        
     }
     
     func resetOrder() {
-        self.order.reset()
         initOrder()
-        
     }
 }
 

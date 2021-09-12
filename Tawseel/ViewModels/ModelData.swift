@@ -17,9 +17,9 @@ final class ModelData: ObservableObject {
             didChange.send(stores)
         }
     }
-    let loginApi = ProcessInfo.processInfo.environment["loginApi"]
+    let loginApi: String? = "https://tawseel.odaiq.co:5100/login"
     @State var token = AppManager.Instance.token
-    let storeApi = ProcessInfo.processInfo.environment["storeApi"]
+    let storeApi: String? = "https://tawseel.odaiq.co:5200/store"
     var error :AFError?
     
 //    var features: [StoreDetails] {

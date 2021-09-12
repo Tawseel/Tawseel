@@ -10,7 +10,7 @@ import Alamofire
 
 final class LoginModelData: ObservableObject{
     var didChange = PassthroughSubject<Bool, Never>()
-    let loginApi = ProcessInfo.processInfo.environment["loginApi"]
+    let loginApi: String? = "https://tawseel.odaiq.co:5100/login"
     var error :AFError?
     
     @Published var isLogIn = false{

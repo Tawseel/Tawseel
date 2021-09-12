@@ -19,9 +19,9 @@ final class ItemModelData: ObservableObject {
         }
     }
     
-    let loginApi = ProcessInfo.processInfo.environment["loginApi"]
+    let loginApi: String? = "https://tawseel.odaiq.co:5100/login"
     @State var token = AppManager.Instance.token
-    let itemAPI = ProcessInfo.processInfo.environment["itemAPI"]
+    let itemAPI: String? = "https://tawseel.odaiq.co:5200/api/v1/store"
     var error :AFError?
     
     

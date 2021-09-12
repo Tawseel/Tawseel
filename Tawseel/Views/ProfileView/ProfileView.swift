@@ -54,7 +54,9 @@ struct ProfileView: View {
                     })
                 }
                 
-                AddressView(action: clientDefaultAddressChanged)
+                if(clientModelData.isFromServer) {
+                    AddressView(action: clientDefaultAddressChanged)
+                }
                 
                 Button("Add New Address") {
                     showingPopover = true

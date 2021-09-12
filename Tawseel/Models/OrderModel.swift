@@ -18,8 +18,16 @@ class OrderModel: Hashable, ObservableObject{
         self.order = Order(values: [], item: item)
     }
     
+    init(order: Order) {
+        self.order = order
+    }
+    
     func reset() {
         self.order.values = []
+    }
+    
+    func flipValue(title: String) {
+        self.order.flipValue(title: title)
     }
     
     
@@ -52,6 +60,15 @@ public struct Order: Encodable, Equatable, Hashable, Decodable{
         
         if(!isExist) {
             values.append(CardOrderValue(ingredientName: title, ingredientValue: value))
+        }
+    }
+    
+    mutating func flipValue(title: String) {
+        for i in 0..<values.count {
+            if(values[i].ingredientName == title) {
+                values[i].ingredientValue = values[i].ingredientValue == "false" ? "true" : "false"
+                break
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ import SwiftUI
 final class ClientModelData: ObservableObject {
     @State var token = AppManager.Instance.token
     var error :AFError?
-    let clientAPI = ProcessInfo.processInfo.environment["clientAPI"]
+    let clientAPI: String? = "https://tawseel.odaiq.co:5200/client"
     var headers: HTTPHeaders = []
     
     var didChange = PassthroughSubject<[Item], Never>()
@@ -33,9 +33,12 @@ final class ClientModelData: ObservableObject {
         }
     }
     
+    var isFromServer = false
+    
     var clientDidChange = PassthroughSubject<Client, Never>()
     @Published var client: Client =  Client(id: 0, firstName: "obaida", lastName: "kata", phoneNumber: "0524388203", email: "obaida2_18@me.com", defaultAddress: Address(streetName: "streetName3", streetNumber: "33", homeNumber: "53", floorNumber: "3"), addresses: [Address(streetName: "streetName1", streetNumber: "31", homeNumber: "51", floorNumber: "5"), Address(streetName: "streetName", streetNumber: "30", homeNumber: "50", floorNumber: "5")], points: 5)  {
         didSet {
+            isFromServer = true
             clientDidChange.send(client)
         }
     }

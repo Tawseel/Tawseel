@@ -14,7 +14,6 @@ struct StoreDetails: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
     var phoneNumber: String
-    var isFeatured: Bool
     var description: String
     var imagePath: String
     

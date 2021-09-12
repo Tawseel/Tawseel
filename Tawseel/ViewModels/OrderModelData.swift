@@ -12,7 +12,7 @@ import SwiftUI
 
 final class OrderModelData: ObservableObject {
     @State var token = AppManager.Instance.token
-    let orderAPI = ProcessInfo.processInfo.environment["orderAPI"]
+    let orderAPI: String? = "https://tawseel.odaiq.co:5200/order"
     var error :AFError?
     var headers: HTTPHeaders = []
     

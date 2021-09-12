@@ -23,9 +23,8 @@ struct CheckBoxView: View {
     }
     
     func toggle(){
-        isChecked = !isChecked;
-        self.order.setValue(title: self.title, value: "\(isChecked)")
-
+        self.isChecked = !self.isChecked;
+        self.order.flipValue(title: self.title)
     }
     
     var body: some View {

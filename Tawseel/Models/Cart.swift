@@ -13,7 +13,15 @@ class Cart: ObservableObject{
     var didChange = PassthroughSubject<[OrderModel], Never>()
     
     public func add(order: OrderModel){
-        orders.append(order)
+        let iOrder = order.order
+        var copiedValues: [CardOrderValue] = []
+        for value in order.order.values {
+            copiedValues.append(value)
+        }
+            
+        
+        let orderClone = Order(values: copiedValues, item: iOrder.item, status: iOrder.status, dateTime: iOrder.dateTime)
+        orders.append(OrderModel(order: orderClone))
     }
     
     @Published var orders: [OrderModel] = []{
