@@ -26,14 +26,19 @@ class OrderModel: Hashable, ObservableObject{
         self.order.values = []
     }
     
-    func flipValue(title: String) {
-        self.order.flipValue(title: title)
+    func flipValue(title: String, price: Int) {
+        self.order.flipValue(title: title, price: price)
+    }
+    
+    func getValueof(title: String) -> String?{
+       return self.order.getValue(title: title)
+    }
+    
+    public func setValue(title: String, value: String, price: Int) {
+        self.order.setValue(title: title, value: value, price: price)
     }
     
     
-    public func setValue(title: String, value: String) {
-        self.order.setValue(title: title, value: value)
-    }
     
     
     func hash(into hasher: inout Hasher) {
@@ -46,27 +51,64 @@ public struct Order: Encodable, Equatable, Hashable, Decodable{
     let item : Item
     var status = OrderStatus.New
     var dateTime = ""
+    var totalPrice: Double  {
+        get {
+            var price = item.price;
+            for value in values {
+                price = price + Double(value.price)
+            }
+            return price;
+        }
+    }
     
-    mutating func setValue(title: String, value: String) {
+    init(values: [CardOrderValue], item: Item, status: OrderStatus = OrderStatus.New, dateTime: String = "", totalPrice: Double) {
+        self.values = values
+        self.item = item
+        self.status = status
+        self.dateTime = dateTime
+    }
+    
+    
+    init(values: [CardOrderValue], item: Item) {
+        self.values = values
+        self.item = item
+        self.status = OrderStatus.New
+        self.dateTime = ""
+    }
+
+    
+    mutating func setValue(title: String, value: String, price: Int) {
         var isExist = false
         
         for i in 0..<values.count {
             if(values[i].ingredientName == title) {
                 values[i].ingredientValue = value
+                values[i].price = price
                 isExist = true
                 break
             }
         }
         
         if(!isExist) {
-            values.append(CardOrderValue(ingredientName: title, ingredientValue: value))
+            values.append(CardOrderValue(ingredientName: title, ingredientValue: value, price: price))
         }
     }
     
-    mutating func flipValue(title: String) {
+    func getValue(title: String) -> String? {
         for i in 0..<values.count {
             if(values[i].ingredientName == title) {
-                values[i].ingredientValue = values[i].ingredientValue == "false" ? "true" : "false"
+                return values[i].ingredientValue
+            }
+        }
+        
+        return nil
+    }
+    
+    mutating func flipValue(title: String, price: Int) {
+        for i in 0..<values.count {
+            if(values[i].ingredientName == title) {
+                values[i].ingredientValue = values[i].ingredientValue == "false" ? "true" : "false";
+                values[i].price = price
                 break
             }
         }
@@ -88,4 +130,5 @@ struct CardOrderValue: Encodable, Equatable, Comparable, Hashable, Decodable {
     
     var ingredientName: String
     var ingredientValue: String
+    var price: Int
 }

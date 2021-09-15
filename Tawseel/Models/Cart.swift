@@ -19,8 +19,7 @@ class Cart: ObservableObject{
             copiedValues.append(value)
         }
             
-        
-        let orderClone = Order(values: copiedValues, item: iOrder.item, status: iOrder.status, dateTime: iOrder.dateTime)
+        let orderClone = Order(values: copiedValues, item: iOrder.item, status: iOrder.status, dateTime: iOrder.dateTime, totalPrice: iOrder.totalPrice)
         orders.append(OrderModel(order: orderClone))
     }
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct itemCard: View {
+struct ItemCard: View {
     @State var selected = ""
     @State var show = false
     var item: Item
@@ -35,7 +35,7 @@ struct itemCard: View {
 
 struct itemCard_Previews: PreviewProvider {
     static var previews: some View {
-        itemCard(item: AppManager.Instance.itemModelData.items[0])
+        ItemCard(item: AppManager.Instance.itemModelData.items[0])
     }
 }
 

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B03AF2D26404E17001AF518 /* itemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03AF2C26404E17001AF518 /* itemCard.swift */; };
+		8B03AF2D26404E17001AF518 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03AF2C26404E17001AF518 /* ItemCard.swift */; };
 		8B03AF3026404EF9001AF518 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03AF2F26404EF9001AF518 /* Item.swift */; };
 		8B03AF34264057E2001AF518 /* ItemModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03AF33264057E2001AF518 /* ItemModelData.swift */; };
 		8B03AF3726405949001AF518 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B03AF3626405949001AF518 /* items.json */; };
@@ -66,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B03AF2C26404E17001AF518 /* itemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemCard.swift; sourceTree = "<group>"; };
+		8B03AF2C26404E17001AF518 /* ItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
 		8B03AF2F26404EF9001AF518 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8B03AF33264057E2001AF518 /* ItemModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModelData.swift; sourceTree = "<group>"; };
 		8B03AF3626405949001AF518 /* items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				8BF20B4626320F75007AC659 /* StoreView.swift */,
-				8B03AF2C26404E17001AF518 /* itemCard.swift */,
+				8B03AF2C26404E17001AF518 /* ItemCard.swift */,
 				8B03AF3D26405B6D001AF518 /* ItemCategoryRow.swift */,
 				8B2622C226DAA8F600701FAC /* ItemView.swift */,
 			);
@@ -485,7 +485,7 @@
 				8B03AF3E26405B6D001AF518 /* ItemCategoryRow.swift in Sources */,
 				8BBF8B5F26E36D7000619D6A /* PurchaseHistoryView.swift in Sources */,
 				8B03AF34264057E2001AF518 /* ItemModelData.swift in Sources */,
-				8B03AF2D26404E17001AF518 /* itemCard.swift in Sources */,
+				8B03AF2D26404E17001AF518 /* ItemCard.swift in Sources */,
 				8B70852A26DE962E00C8591C /* OrderModel.swift in Sources */,
 				8BE15FEA2631F15F001D1DA0 /* StoreDetails.swift in Sources */,
 				8B1E516B263FEA1D0015C353 /* SignUpView.swift in Sources */,

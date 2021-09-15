@@ -22,7 +22,7 @@ struct ItemCategoryRow: View {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(items) { item in
                         NavigationLink(destination: ItemView(item: item)) {
-                            itemCard(item: item)
+                            ItemCard(item: item)
                         }
                     }
                 }

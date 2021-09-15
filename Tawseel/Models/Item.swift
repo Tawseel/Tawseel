@@ -17,6 +17,7 @@ enum IngredientType: String, Decodable, Hashable, Encodable{
 struct Value: Decodable, Hashable, Encodable{
     var id: Int
     var name: String
+    var price: Int = 0
     var ingredientID: Int
 }
 
@@ -24,12 +25,13 @@ struct IngredientConfiguration: Decodable, Hashable,Identifiable, Encodable{
     var id: Int = 0
     var minimumValue: Int = 1
     var maximumValue: Int = 50
-    var step: Int = 2
+    var price: Int = 0
     var ingredientID: Int = 0
 }
 
 struct Ingredient: Decodable, Hashable, Identifiable, Encodable{
     var id: Int
+    var price: Int = 0
     var title: String
     var itemID: Int
     var type: IngredientType
