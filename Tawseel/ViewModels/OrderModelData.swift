@@ -24,7 +24,7 @@ final class OrderModelData: ObservableObject {
     }
     
     func setNewOrders(orders : [OrderModel]) {
-        let ordersRequest = self.getOrders(orders: orders)
+        let ordersRequest = self.getOrders(ordersModels: orders)
         if var urlString = orderAPI {
             urlString = urlString + "/addOrders";
             headers.add(name: "Authorization", value: token)
@@ -43,13 +43,13 @@ final class OrderModelData: ObservableObject {
         }
     }
     
-    func getOrders(orders: [OrderModel]) -> [Order]{
-        var tOrders: [Order] = []
-        for order in orders {
-            tOrders.append(order.order)
+    func getOrders(ordersModels: [OrderModel]) -> [Order]{
+        var orders: [Order] = []
+        for order in ordersModels {
+            orders.append(order.order)
         }
         
-        return tOrders
+        return orders
     }
     
     func getAllPurchaseHistory() {

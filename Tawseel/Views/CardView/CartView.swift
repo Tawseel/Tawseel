@@ -75,6 +75,7 @@ struct CartView: View {
                                 Section {
                                     Button("Confirm") {
                                         orderModelData.setNewOrders(orders: cart.orders)
+                                        self.cart.reset()
                                         showingPopover = false
                                     }
                                 }

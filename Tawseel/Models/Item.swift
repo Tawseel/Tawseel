@@ -26,7 +26,6 @@ struct IngredientConfiguration: Decodable, Hashable,Identifiable, Encodable{
     var minimumValue: Int = 1
     var maximumValue: Int = 50
     var price: Int = 0
-    var ingredientID: Int = 0
 }
 
 struct Ingredient: Decodable, Hashable, Identifiable, Encodable{

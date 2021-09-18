@@ -44,6 +44,6 @@ struct CheckBoxView: View {
 
 struct CheckBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckBoxView(ingredient: Ingredient(id: 1, title: "CheckBoxView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, price: 4, ingredientID: 4)), order: OrderModel(item: Item()))
+        CheckBoxView(ingredient: Ingredient(id: 1, title: "CheckBoxView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, price: 4)), order: OrderModel(item: Item()))
     }
 }

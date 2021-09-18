@@ -55,6 +55,6 @@ struct MultiChoiceView: View {
 
 struct MultiChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        MultiChoiceView(ingredient: Ingredient(id: 2, title: "MultiChoiceView", itemID: 4, type: IngredientType.NumberPicker, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration:IngredientConfiguration(id: 0, minimumValue: 1, maximumValue: 20, price: 3, ingredientID: 3)), order: OrderModel(item: Item()))
+        MultiChoiceView(ingredient: Ingredient(id: 2, title: "MultiChoiceView", itemID: 4, type: IngredientType.NumberPicker, values: [Value(id: 1, name: "Value1", ingredientID: 1), Value(id: 2, name: "Value2", ingredientID: 1)], ingredientConfiguration:IngredientConfiguration(id: 0, minimumValue: 1, maximumValue: 20, price: 3)), order: OrderModel(item: Item()))
     }
 }

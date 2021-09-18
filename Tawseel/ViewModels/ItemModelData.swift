@@ -21,7 +21,7 @@ final class ItemModelData: ObservableObject {
     
     let loginApi: String? = "https://tawseel.odaiq.co:5100/login"
     @State var token = AppManager.Instance.token
-    let itemAPI: String? = "https://tawseel.odaiq.co:5200/api/v1/store"
+    let itemAPI: String? = "https://tawseel.odaiq.co:5200/store"
     var error :AFError?
     
     
@@ -36,7 +36,7 @@ final class ItemModelData: ObservableObject {
     
     func loadItems(storeID : Int) {
         if var urlString = itemAPI{
-            urlString = urlString + "/4/items";
+            urlString = urlString + "/\(storeID)/items";
             headers.add(name: "Authorization", value: token)
             AF.request(urlString, headers: headers).response { response in
                 if let error = response.error {

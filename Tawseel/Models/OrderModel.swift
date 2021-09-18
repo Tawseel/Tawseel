@@ -47,25 +47,19 @@ class OrderModel: Hashable, ObservableObject{
 }
 
 public struct Order: Encodable, Equatable, Hashable, Decodable{
-    var values : [CardOrderValue]
+    var values : [CardOrderValue] = []
     let item : Item
     var status = OrderStatus.New
     var dateTime = ""
-    var totalPrice: Double  {
-        get {
-            var price = item.price;
-            for value in values {
-                price = price + Double(value.price)
-            }
-            return price;
-        }
-    }
+    var totalPrice: Double = 0.0
+    
     
     init(values: [CardOrderValue], item: Item, status: OrderStatus = OrderStatus.New, dateTime: String = "", totalPrice: Double) {
         self.values = values
         self.item = item
         self.status = status
         self.dateTime = dateTime
+        self.totalPrice = totalPrice
     }
     
     
@@ -74,6 +68,13 @@ public struct Order: Encodable, Equatable, Hashable, Decodable{
         self.item = item
         self.status = OrderStatus.New
         self.dateTime = ""
+    }
+    
+    mutating func calculateTotalPrice() {
+        self.totalPrice = item.price;
+        for value in values {
+            self.totalPrice = self.totalPrice + Double(value.price)
+        }
     }
 
     
@@ -92,6 +93,7 @@ public struct Order: Encodable, Equatable, Hashable, Decodable{
         if(!isExist) {
             values.append(CardOrderValue(ingredientName: title, ingredientValue: value, price: price))
         }
+        calculateTotalPrice()
     }
     
     func getValue(title: String) -> String? {
@@ -112,6 +114,7 @@ public struct Order: Encodable, Equatable, Hashable, Decodable{
                 break
             }
         }
+        calculateTotalPrice()
     }
 }
 
@@ -130,5 +133,5 @@ struct CardOrderValue: Encodable, Equatable, Comparable, Hashable, Decodable {
     
     var ingredientName: String
     var ingredientValue: String
-    var price: Int
+    var price: Int = 0
 }

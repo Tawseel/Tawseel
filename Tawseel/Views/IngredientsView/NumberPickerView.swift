@@ -44,6 +44,6 @@ struct NumberPickerView: View {
 
 struct NumberPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, price: 4, ingredientID: 4)), order: OrderModel(item: Item()))
+        NumberPickerView(ingredient: Ingredient(id: 1, title: "NumberPickerView", itemID: 4, type: IngredientType.NumberPicker, values: [], ingredientConfiguration: IngredientConfiguration(id: 3, minimumValue:-3, maximumValue: 20, price: 4)), order: OrderModel(item: Item()))
     }
 }
